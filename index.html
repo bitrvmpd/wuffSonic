@@ -14,7 +14,6 @@
       <h1 class="project-name">wuffSonic</h1>
       <h2 class="project-tagline">Another Subsonic API written in C#. It&#39;s a WIP.</h2>
       <a href="https://github.com/bitrvmpd/wuffSonic" class="btn">View on GitHub</a>
-      <a href="https://www.nuget.org/packages/wuffSonic/" class="btn">View on Nuget</a>
       <a href="https://github.com/bitrvmpd/wuffSonic/zipball/master" class="btn">Download .zip</a>
       <a href="https://github.com/bitrvmpd/wuffSonic/tarball/master" class="btn">Download .tar.gz</a>
     </section>
@@ -29,6 +28,32 @@
 <p><a href="https://www.nuget.org/packages/wuffSonic/"> Nuget Package now available.</a></p>
 </blockquote>
 
+<h2>
+<a id="how-to-use-it" class="anchor" href="#how-to-use-it" aria-hidden="true"><span class="octicon octicon-link"></span></a>How to use it:</h2>
+
+<pre><code>    try 
+    {
+        Ping p = new Ping()
+        {
+            appName = "yourAppName",
+            user = "yourUser",
+            password = "yourPassword",
+            version = "1.11",
+            uri = "http://music.haus.foxburu.mx"
+        };
+        //Call Ping
+        var response = await p.DoRequest&lt;PingResponse&gt;();
+    }
+    catch(SubsonicException se)
+    {
+        Console.WriteLine(se.Error.Details.message);
+    }
+</code></pre>
+
+<blockquote>
+<p>You can find more details about the API <a href="http://subsonic.org/pages/api.jsp"> here </a></p>
+</blockquote>
+
 <p>That's all for the moment.</p>
 
 <p>Made with love and fluffy paws.</p>
@@ -41,6 +66,16 @@
 
     </section>
 
-  
+            <script type="text/javascript">
+            var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+            document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+          </script>
+          <script type="text/javascript">
+            try {
+              var pageTracker = _gat._getTracker("UA-70412776-1");
+            pageTracker._trackPageview();
+            } catch(err) {}
+          </script>
+
   </body>
 </html>
