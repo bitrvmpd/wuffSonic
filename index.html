@@ -14,7 +14,6 @@
       <h1 class="project-name">wuffSonic</h1>
       <h2 class="project-tagline">Another Subsonic API written in C#. It&#39;s a WIP.</h2>
       <a href="https://github.com/bitrvmpd/wuffSonic" class="btn">View on GitHub</a>
-      <a href="https://www.nuget.org/packages/wuffSonic/" class="btn">View on Nuget</a>
       <a href="https://github.com/bitrvmpd/wuffSonic/zipball/master" class="btn">Download .zip</a>
       <a href="https://github.com/bitrvmpd/wuffSonic/tarball/master" class="btn">Download .tar.gz</a>
     </section>
@@ -34,13 +33,16 @@
 
 <div class="highlight highlight-source-cs"><pre>    <span class="pl-k">try</span> 
     {
+        Credentials c = <span class="pl-k">new</span> Credentials(
+                appName: <span class="pl-s"><span class="pl-pds">"</span>yourAppName<span class="pl-pds">"</span></span>,
+                user: <span class="pl-s"><span class="pl-pds">"</span>yourUser<span class="pl-pds">"</span></span>,
+                password: <span class="pl-s"><span class="pl-pds">"</span>yourPassword<span class="pl-pds">"</span></span>,
+                version: <span class="pl-s"><span class="pl-pds">"</span>1.11<span class="pl-pds">"</span></span>,
+                uri: <span class="pl-s"><span class="pl-pds">"</span>http://music.haus.foxburu.mx<span class="pl-pds">"</span></span>
+                );
         Ping p = <span class="pl-k">new</span> Ping()
         {
-            appName = <span class="pl-s"><span class="pl-pds">"</span>yourAppName<span class="pl-pds">"</span></span>,
-            user = <span class="pl-s"><span class="pl-pds">"</span>yourUser<span class="pl-pds">"</span></span>,
-            password = <span class="pl-s"><span class="pl-pds">"</span>yourPassword<span class="pl-pds">"</span></span>,
-            version = <span class="pl-s"><span class="pl-pds">"</span>1.11<span class="pl-pds">"</span></span>,
-            uri = <span class="pl-s"><span class="pl-pds">"</span>http://music.haus.foxburu.mx<span class="pl-pds">"</span></span>
+            Credentials = c
         };
         <span class="pl-c">//Call Ping</span>
         <span class="pl-k">var</span> response = <span class="pl-k">await</span> p.DoRequest&lt;PingResponse&gt;();
