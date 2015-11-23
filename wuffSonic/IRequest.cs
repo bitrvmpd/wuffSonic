@@ -9,7 +9,7 @@ using System.Xml.Serialization;
 
 namespace wuffSonic 
 {
-    interface IRequest  
+    interface IRequest
     {
         Credentials Credentials { get; set; }
         string method { get; }       
