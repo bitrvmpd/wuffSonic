@@ -15,7 +15,7 @@ namespace wuffSonic.Models
         [XmlAttribute(AttributeName = "status")]
         public string status { get; set; }
     }
-    public class Star : Request
+    public class Star : Request<StarResponse>
     {
         /// <summary>
         /// Attaches a star to a song, album or artist.

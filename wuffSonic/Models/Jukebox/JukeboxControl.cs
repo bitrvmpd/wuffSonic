@@ -49,7 +49,7 @@ namespace wuffSonic.Models
         shuffle,
         setGain
     }
-    public class JukeboxControl : Request
+    public class JukeboxControl : Request<JukeboxControlResponse>
     {
         /// <summary>
         /// Controls the jukebox, i.e., playback directly on the server's audio hardware. 
@@ -80,14 +80,14 @@ namespace wuffSonic.Models
             UpdateParams(
                 "action", JukeboxControlAction.get.ToString()
                 );
-            return await DoRequest<JukeboxControlResponse>();
+            return await DoRequest();
         }
         public async Task<JukeboxControlResponse> Status()
         {
             UpdateParams(
                  "action", JukeboxControlAction.status.ToString()
                 );
-            return await DoRequest<JukeboxControlResponse>();
+            return await DoRequest();
         }
         /// <summary>
         /// Add a song to the jukebox playlist.
@@ -101,21 +101,21 @@ namespace wuffSonic.Models
                  "action", JukeboxControlAction.set.ToString(),
                  nameof(id), id
                 );
-            return await DoRequest<JukeboxControlResponse>();
+            return await DoRequest();
         }
         public async Task<JukeboxControlResponse> Start()
         {
             UpdateParams(
                  "action", JukeboxControlAction.start.ToString()
                 );
-            return await DoRequest<JukeboxControlResponse>();
+            return await DoRequest();
         }
         public async Task<JukeboxControlResponse> Stop()
         {
             UpdateParams(
                  "action", JukeboxControlAction.stop.ToString()
                 );
-            return await DoRequest<JukeboxControlResponse>();
+            return await DoRequest();
         }
         /// <summary>
         /// Skip a song of the jukebox playlist.
@@ -130,7 +130,7 @@ namespace wuffSonic.Models
                  nameof(index), index,
                  nameof(offset), offset
                 );
-            return await DoRequest<JukeboxControlResponse>();
+            return await DoRequest();
         }
         /// <summary>
         /// Add a song to the jukebox playlist.
@@ -143,14 +143,14 @@ namespace wuffSonic.Models
                  "action", JukeboxControlAction.add.ToString(),
                  nameof(id), id
                 );
-            return await DoRequest<JukeboxControlResponse>(); ;
+            return await DoRequest(); ;
         }
         public async Task<JukeboxControlResponse> Clear()
         {
             UpdateParams(
                  "action", JukeboxControlAction.clear.ToString()
                 );
-            return await DoRequest<JukeboxControlResponse>(); ;
+            return await DoRequest(); ;
         }
         /// <summary>
         /// Remove a song of the jukebox playlist.
@@ -163,14 +163,14 @@ namespace wuffSonic.Models
                  "action", JukeboxControlAction.remove.ToString(),
                  nameof(index), index
                 );
-            return await DoRequest<JukeboxControlResponse>();
+            return await DoRequest();
         }
         public async Task<JukeboxControlResponse> Shuffle()
         {
             UpdateParams(
                  "action", JukeboxControlAction.shuffle.ToString()
                 );
-            return await DoRequest<JukeboxControlResponse>();
+            return await DoRequest();
         }
         /// <summary>
         /// Controls the playback volume
@@ -183,7 +183,7 @@ namespace wuffSonic.Models
                  "action", JukeboxControlAction.setGain.ToString(),
                  nameof(gain), gain
                 );
-            return await DoRequest<JukeboxControlResponse>();
+            return await DoRequest();
         }
 
         private void UpdateParams(params string[] args)

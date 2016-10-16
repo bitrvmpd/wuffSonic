@@ -27,7 +27,7 @@ namespace wuffSonic.Models
         [XmlText]
         public string value { get; set; }
     }
-    public class GetLyrics : Request
+    public class GetLyrics : Request<GetLyricsResponse>
     {
         /// <summary>
         /// Searches for and returns lyrics for a given song.

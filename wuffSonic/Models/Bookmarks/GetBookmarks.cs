@@ -37,7 +37,7 @@ namespace wuffSonic.Models
         [XmlElement(ElementName = "entry")]
         public Entry[] entry { get; set; }
     }
-    public class GetBookmarks : Request
+    public class GetBookmarks : Request<GetBookmarksResponse>
     {
         /// <summary>
         /// Returns all bookmarks for this user. A bookmark is a position within a certain media file.

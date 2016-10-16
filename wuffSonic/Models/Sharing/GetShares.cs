@@ -44,7 +44,7 @@ namespace wuffSonic.Models
         [XmlElement(ElementName = "entry")]
         public Entry[] entry { get; set; }
     }
-    public class GetShares : Request
+    public class GetShares : Request<GetSharesResponse>
     {
         /// <summary>
         /// Returns information about shared media this user is allowed to manage. 

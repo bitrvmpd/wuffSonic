@@ -22,7 +22,7 @@ namespace wuffSonic.Models
         [XmlElement(ElementName = "song")]
         public Song[] song { get; set; }
     }
-    public class GetSimilarSongs : Request
+    public class GetSimilarSongs : Request<GetSimilarSongsResponse>
     {
         /// <summary>
         /// Returns a random collection of songs from the given artist and similar artists, using data from last.fm. Typically used for artist radio features.

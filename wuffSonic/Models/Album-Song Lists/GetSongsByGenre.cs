@@ -22,7 +22,7 @@ namespace wuffSonic.Models
         [XmlElement(ElementName = "song")]
         public Song[] song { get; set; }
     }
-    public class GetSongsByGenre : Request
+    public class GetSongsByGenre : Request<GetSongsByGenreResponse>
     {
         /// <summary>
         /// Returns songs in a given genre.

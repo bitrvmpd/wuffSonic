@@ -17,7 +17,7 @@ namespace wuffSonic.Models
         [XmlElement(ElementName = "starred2")]
         public Starred starred { get; set; }
     }
-    public class GetStarred2 : Request
+    public class GetStarred2 : Request<GetStarred2Response>
     {
         /// <summary>
         /// Similar to getStarred, but organizes music according to ID3 tags.

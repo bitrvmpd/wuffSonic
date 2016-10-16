@@ -15,7 +15,7 @@ namespace wuffSonic.Models
         [XmlAttribute(AttributeName = "status")]
         public string status { get; set; }
     }
-    public class UpdatePlaylist : Request
+    public class UpdatePlaylist : Request<UpdatePlaylistResponse>
     {
         /// <summary>
         /// Updates a playlist. Only the owner of a playlist is allowed to update it.

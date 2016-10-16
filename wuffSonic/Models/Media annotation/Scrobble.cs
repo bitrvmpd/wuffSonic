@@ -16,7 +16,7 @@ namespace wuffSonic.Models
         public string status { get; set; }
     }
 
-    public class Scrobble : Request
+    public class Scrobble : Request<ScrobbleResponse>
     {
         /// <summary>
         /// "Scrobbles" a given music file on last.fm. Requires that the user has configured his/her last.fm credentials on the Subsonic server (Settings > Personal).

@@ -17,7 +17,7 @@ namespace wuffSonic.Models
         [XmlElement(ElementName = "shares")]
         public Shares shares { get; set; }
     }
-    public class CreateShare : Request
+    public class CreateShare : Request<CreateShareResponse>
     {
         /// <summary>
         /// Creates a public URL that can be used by anyone to stream music or video from the Subsonic server. 

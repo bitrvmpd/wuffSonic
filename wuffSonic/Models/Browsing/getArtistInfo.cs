@@ -43,7 +43,7 @@ namespace wuffSonic.Models
         [XmlAttribute(AttributeName = "albumCount")]
         public string albumCount { get; set; }
     }
-    public class GetArtistInfo : Request
+    public class GetArtistInfo : Request<GetArtistInfoResponse>
     {
         /// <summary>
         /// Returns artist info with biography, image URLs and similar artists, using data from last.fm.

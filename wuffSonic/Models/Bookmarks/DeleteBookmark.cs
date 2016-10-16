@@ -15,7 +15,7 @@ namespace wuffSonic.Models
         [XmlAttribute(AttributeName = "status")]
         public string status { get; set; }
     }
-    public class DeleteBookmark : Request
+    public class DeleteBookmark : Request<DeleteBookmarkResponse>
     {
         /// <summary>
         /// Deletes the bookmark for a given file.

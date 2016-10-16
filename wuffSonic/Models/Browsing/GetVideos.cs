@@ -59,7 +59,7 @@ namespace wuffSonic.Models
         [XmlAttribute(AttributeName = "transcodedContentType")]
         public string transcodedContentType { get; set; }
     }
-    public class GetVideos : Request
+    public class GetVideos : Request<GetVideosResponse>
     {
         /// <summary>
         /// Returns all video files.

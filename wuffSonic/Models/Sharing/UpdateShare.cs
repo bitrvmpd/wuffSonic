@@ -15,7 +15,7 @@ namespace wuffSonic.Models
         [XmlAttribute(AttributeName = "status")]
         public string status { get; set; }
     }
-    public class UpdateShare : Request
+    public class UpdateShare : Request<UpdateShareResponse>
     {
         /// <summary>
         /// Updates the description and/or expiration date for an existing share.

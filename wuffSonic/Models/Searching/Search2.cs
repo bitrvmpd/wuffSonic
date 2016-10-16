@@ -26,7 +26,7 @@ namespace wuffSonic.Models
         [XmlElement(ElementName = "song")]
         public Song[] song { get; set; }
     }
-    public class Search2 : Request
+    public class Search2 : Request<Search2Response>
     {
         /// <summary>
         /// Returns albums, artists and songs matching the given search criteria. Supports paging through the result.

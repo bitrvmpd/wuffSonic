@@ -15,7 +15,7 @@ namespace wuffSonic.Models
         [XmlAttribute(AttributeName = "status")]
         public string status { get; set; }
     }
-    public class ChangePassword : Request
+    public class ChangePassword : Request<ChangePasswordResponse>
     {
         /// <summary>
         /// Changes the password of an existing Subsonic user, using the following parameters. 

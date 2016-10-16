@@ -15,7 +15,7 @@ namespace wuffSonic.Models
         [XmlAttribute(AttributeName = "status")]
         public string status { get; set; }
     }
-    public class DownloadPodcastEpisode : Request
+    public class DownloadPodcastEpisode : Request<DownloadPodcastEpisodeResponse>
     {
         /// <summary>
         /// Request the server to start downloading a given Podcast episode. 

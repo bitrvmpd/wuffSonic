@@ -15,7 +15,7 @@ namespace wuffSonic.Models
         [XmlAttribute(AttributeName = "status")]
         public string status { get; set; }
     }
-    public class UpdateUser : Request
+    public class UpdateUser : Request<UpdateUserResponse>
     {
         /// <summary>
         /// Modifies an existing Subsonic user, using the following parameters:

@@ -15,7 +15,7 @@ namespace wuffSonic.Models
         [XmlAttribute(AttributeName = "status")]
         public string status { get; set; }
     }
-    public class RefreshPodcasts : Request
+    public class RefreshPodcasts : Request<RefreshPodcastsResponse>
     {
         /// <summary>
         /// Requests the server to check for new Podcast episodes. 

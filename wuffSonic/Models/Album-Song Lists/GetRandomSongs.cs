@@ -23,7 +23,7 @@ namespace wuffSonic.Models
         [XmlElement(ElementName = "song")]
         public Song[] song { get; set; }
     }
-    public class GetRandomSongs : Request
+    public class GetRandomSongs : Request<GetRandomSongsResponse>
     {
         /// <summary>
         /// Returns random songs matching the given criteria.

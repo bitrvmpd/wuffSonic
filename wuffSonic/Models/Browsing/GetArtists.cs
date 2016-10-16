@@ -25,7 +25,7 @@ namespace wuffSonic.Models
         [XmlElement(ElementName ="index")]
         public Index[] index { get; set; }
     }
-    public class GetArtists : Request
+    public class GetArtists : Request<GetArtistsResponse>
     {
         /// <summary>
         /// Similar to getIndexes, but organizes music according to ID3 tags.

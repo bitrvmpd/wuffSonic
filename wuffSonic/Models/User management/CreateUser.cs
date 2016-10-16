@@ -15,7 +15,7 @@ namespace wuffSonic.Models
         [XmlAttribute(AttributeName = "status")]
         public string status { get; set; }
     }
-    public class CreateUser : Request
+    public class CreateUser : Request<CreateUserResponse>
     {
         /// <summary>
         /// Creates a new Subsonic user

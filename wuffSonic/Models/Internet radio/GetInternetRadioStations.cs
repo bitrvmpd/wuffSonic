@@ -33,7 +33,7 @@ namespace wuffSonic.Models
         [XmlAttribute(AttributeName = "homePageUrl")]
         public string homePageUrl { get; set; }
     }
-    public class GetInternetRadioStations : Request
+    public class GetInternetRadioStations : Request<GetInternetRadioStationsResponse>
     {
         /// <summary>
         /// Returns all internet radio stations. Takes no extra parameters.

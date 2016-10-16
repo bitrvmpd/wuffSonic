@@ -17,7 +17,7 @@ namespace wuffSonic.Models
         [XmlElement(ElementName ="album")]
         public Album album { get; set; }
     }
-    public class GetAlbum : Request
+    public class GetAlbum : Request<GetAlbumResponse>
     {
         /// <summary>
         /// Returns details for an album, including a list of songs. This method organizes music according to ID3 tags.

@@ -33,7 +33,7 @@ namespace wuffSonic.Models
         [XmlAttribute(AttributeName = "name")]
         public string name { get; set; }
     }
-    public class GetMusicFolders : Request
+    public class GetMusicFolders : Request<GetMusicFoldersResponse>
     {
         /// <summary>
         /// Returns all configured top-level music folders. Takes no extra parameters.

@@ -33,7 +33,7 @@ namespace wuffSonic.Models
         public Entry[] entry { get; set; }
 
     }
-    public class GetPlayQueue : Request
+    public class GetPlayQueue : Request<GetPlayQueueResponse>
     {
         /// <summary>
         /// Returns the state of the play queue for this user (as set by savePlayQueue). 

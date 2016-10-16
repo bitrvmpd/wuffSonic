@@ -39,7 +39,7 @@ namespace wuffSonic
         }
     }
 
-    public abstract class Request : IRequest
+    public abstract class Request<T> : IRequest
     {
         public virtual Dictionary<string, string> parameters { get; set; }            
         public virtual string method { get; }
@@ -94,7 +94,7 @@ namespace wuffSonic
                 param);
         }
 
-        public virtual async Task<T> DoRequest<T>()
+        public virtual async Task<T> DoRequest()
         {
             dynamic resultingMessage = (T)Activator.CreateInstance(typeof(T));
             HttpClient rqst = new HttpClient();

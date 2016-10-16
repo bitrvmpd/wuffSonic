@@ -79,7 +79,7 @@ namespace wuffSonic.Models
         [XmlAttribute(AttributeName = "transcodedSuffix")]
         public string transcodedSuffix { get; set; }
     }
-    public class GetNowPlaying : Request
+    public class GetNowPlaying : Request<GetNowPlayingResponse>
     {
         /// <summary>
         /// Returns what is currently being played by all users. Takes no extra parameters.

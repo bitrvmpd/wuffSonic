@@ -22,7 +22,7 @@ namespace wuffSonic.Models
         [XmlElement(ElementName = "episode")]
         public Episode[] episode { get; set; }
     }
-    public class GetNewestPodcasts : Request
+    public class GetNewestPodcasts : Request<GetNewestPodcastsResponse>
     {
         /// <summary>
         /// Returns the most recently published Podcast episodes.

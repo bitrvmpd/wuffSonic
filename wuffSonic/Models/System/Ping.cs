@@ -22,7 +22,7 @@ namespace wuffSonic.Models
         public string status { get; set; }
     }
 
-    public class Ping : Request
+    public class Ping : Request<PingResponse>
     {
         /// <summary>
         /// Used to test connectivity with the server.

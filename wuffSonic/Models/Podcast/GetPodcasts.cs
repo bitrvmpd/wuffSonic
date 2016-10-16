@@ -95,7 +95,7 @@ namespace wuffSonic.Models
         [XmlAttribute(AttributeName = "path")]
         public string path { get; set; }
     }
-    public class GetPodcasts : Request
+	public class GetPodcasts : Request<GetPodcastsResponse>
     {
         /// <summary>
         /// Returns all Podcast channels the server subscribes to, and (optionally) their episodes. 

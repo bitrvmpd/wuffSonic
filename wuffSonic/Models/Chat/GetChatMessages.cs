@@ -31,7 +31,7 @@ namespace wuffSonic.Models
         [XmlAttribute(AttributeName = "message")]
         public string message { get; set; }
     }
-    public class GetChatMessages : Request
+    public class GetChatMessages : Request<GetChatMessagesResponse>
     {
         /// <summary>
         /// Returns the current visible (non-expired) chat messages.

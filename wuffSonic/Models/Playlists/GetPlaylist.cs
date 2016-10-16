@@ -17,7 +17,7 @@ namespace wuffSonic.Models
         [XmlElement(ElementName = "playlist")]
         public Playlist playlist { get; set; }
     }
-    public class GetPlaylist : Request
+	public class GetPlaylist : Request<GetPlaylistResponse>
     {
         /// <summary>
         /// Returns a listing of files in a saved playlist.

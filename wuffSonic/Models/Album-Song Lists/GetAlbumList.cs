@@ -42,7 +42,7 @@ namespace wuffSonic.Models
     {
         byGenre
     }
-    public class GetAlbumList : Request
+    public class GetAlbumList : Request<GetAlbumListResponse>
     {
         /// <summary>
         /// Returns a list of random, newest, highest rated etc. albums. Similar to the album lists on the home page of the Subsonic web interface.

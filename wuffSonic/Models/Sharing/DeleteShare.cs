@@ -15,7 +15,7 @@ namespace wuffSonic.Models
         [XmlAttribute(AttributeName = "status")]
         public string status { get; set; }
     }
-    public class DeleteShare : Request
+    public class DeleteShare : Request<DeleteShareResponse>
     {
         /// <summary>
         /// Deletes an existing share.
