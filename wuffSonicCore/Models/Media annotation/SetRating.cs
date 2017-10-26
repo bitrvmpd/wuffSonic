@@ -15,7 +15,7 @@ namespace wuffSonic.Models
         [XmlAttribute(AttributeName = "status")]
         public string status { get; set; }
     }
-    public class SetRating : Request
+    public class SetRating : Request<SetRatingResponse>
     {
         /// <summary>
         /// Sets the rating for a music file.

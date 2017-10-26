@@ -15,7 +15,7 @@ namespace wuffSonic.Models
         [XmlAttribute(AttributeName = "status")]
         public string status { get; set; }
     }
-    public class DeleteUser : Request
+    public class DeleteUser : Request<DeleteUserResponse>
     {
         /// <summary>
         /// Deletes an existing Subsonic user, using the following parameters:

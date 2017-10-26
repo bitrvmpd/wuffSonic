@@ -15,7 +15,7 @@ namespace wuffSonic.Models
         [XmlAttribute(AttributeName = "status")]
         public string status { get; set; }
     }
-    public class AddChatMessage : Request
+    public class AddChatMessage : Request<AddChatMessageResponse>
     {
         /// <summary>
         /// Adds a message to the chat log.

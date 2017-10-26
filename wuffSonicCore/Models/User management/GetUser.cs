@@ -50,7 +50,7 @@ namespace wuffSonic.Models
         [XmlElement(ElementName = "folder")]
         public string[] folder { get; set; }
     }
-    public class GetUser : Request
+    public class GetUser : Request<GetUserResponse>
     {
         /// <summary>
         /// Get details about a given user, including which authorization roles and folder access it has. 

@@ -15,7 +15,7 @@ namespace wuffSonic.Models
         [XmlAttribute(AttributeName = "status")]
         public string status { get; set; }
     }
-    public class Unstar : Request
+    public class Unstar : Request<UnstarResponse>
     {
         /// <summary>
         /// Removes  a star to a song, album or artist.

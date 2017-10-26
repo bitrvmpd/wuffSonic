@@ -15,7 +15,7 @@ namespace wuffSonic.Models
         [XmlAttribute(AttributeName = "status")]
         public string status { get; set; }
     }
-    public class CreateBookmark : Request
+    public class CreateBookmark : Request<CreateBookmarkResponse>
     {
         /// <summary>
         /// Creates or updates a bookmark (a position within a media file). Bookmarks are personal and not visible to other users.

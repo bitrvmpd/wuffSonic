@@ -17,7 +17,7 @@ namespace wuffSonic.Models
         [XmlElement(ElementName = "albumList2")]
         public AlbumList albumList { get; set; }
     }
-    public class GetAlbumList2 : Request
+    public class GetAlbumList2 : Request<GetAlbumList2>
     {
         /// <summary>
         /// Returns a list of random, newest, highest rated etc. albums. Similar to the album lists on the home page of the Subsonic web interface.

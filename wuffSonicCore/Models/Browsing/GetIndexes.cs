@@ -182,7 +182,7 @@ namespace wuffSonic.Models
         public string type { get; set; }
     }
 
-    public class GetIndexes : Request
+    public class GetIndexes : Request<GetIndexesResponse>
     {
         /// <summary>
         /// Returns an indexed structure of all artists.

@@ -15,7 +15,7 @@ namespace wuffSonic.Models
         [XmlAttribute(AttributeName = "status")]
         public string status { get; set; }
     }
-    public class DeletePodcastEpisode : Request
+	public class DeletePodcastEpisode : Request<DeletePodcastEpisodeResponse>
     {
         /// <summary>
         /// Deletes a Podcast episode. 

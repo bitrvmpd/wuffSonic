@@ -29,7 +29,7 @@ namespace wuffSonic.Models
         [XmlAttribute(AttributeName = "albumCount")]
         public string albumCount { get; set; }
     }
-    public class GetGenres : Request
+    public class GetGenres : Request<GetGenresResponse>
     {
         /// <summary>
         /// Returns all genres.

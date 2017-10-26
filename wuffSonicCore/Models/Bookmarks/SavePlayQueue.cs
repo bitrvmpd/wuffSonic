@@ -15,7 +15,7 @@ namespace wuffSonic.Models
         [XmlAttribute(AttributeName = "status")]
         public string status { get; set; }
     }
-    public class SavePlayQueue : Request
+    public class SavePlayQueue : Request<SavePlayQueueResponse>
     {
         /// <summary>
         /// Saves the state of the play queue for this user. 

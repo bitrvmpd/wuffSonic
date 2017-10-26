@@ -15,7 +15,7 @@ namespace wuffSonic.Models
         [XmlAttribute(AttributeName = "status")]
         public string status { get; set; }
     }
-    public class CreatePodcastChannel : Request
+    public class CreatePodcastChannel : Request<CreatePodcastChannelResponse>
     {
         /// <summary>
         /// Adds a new Podcast channel. 

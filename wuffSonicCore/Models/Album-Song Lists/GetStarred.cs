@@ -26,7 +26,7 @@ namespace wuffSonic.Models
         [XmlElement(ElementName = "song")]
         public Song[] song { get; set; }
     }
-    public class GetStarred : Request
+    public class GetStarred : Request<GetStarredResponse>
     {
         /// <summary>
         /// Returns starred songs, albums and artists.

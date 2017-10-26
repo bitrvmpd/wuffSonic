@@ -34,7 +34,7 @@ namespace wuffSonic.Models
         public string date { get; set; }
     }
 
-    public class GetLicense : Request
+	public class GetLicense : Request<GetLicenseResponse>
     {
         /// <summary>
         /// Get details about the software license. 

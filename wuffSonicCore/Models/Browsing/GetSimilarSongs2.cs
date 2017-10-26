@@ -17,7 +17,7 @@ namespace wuffSonic.Models
         [XmlElement(ElementName = "similarSongs2")]
         public SimilarSongs similarSongs { get; set; }
     }
-    public class GetSimilarSongs2 : Request
+    public class GetSimilarSongs2 : Request<GetSimilarSongs2Response>
     {
         /// <summary>
         /// Similar to getSimilarSongs, but organizes music according to ID3 tags.

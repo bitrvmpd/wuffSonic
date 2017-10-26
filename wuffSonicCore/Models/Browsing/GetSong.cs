@@ -17,7 +17,7 @@ namespace wuffSonic.Models
         [XmlElement(ElementName = "song")]
         public Song song { get; set; }
     }
-    public class GetSong : Request
+    public class GetSong : Request<GetSongResponse>
     {
         /// <summary>
         /// Returns details for a song.

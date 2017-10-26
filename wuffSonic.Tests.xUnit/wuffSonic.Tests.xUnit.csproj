@@ -13,6 +13,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\wuffSonic\wuffSonic.csproj" />
+    <ProjectReference Include="..\wuffSonicCore\wuffSonic.csproj" />
   </ItemGroup>
 </Project>

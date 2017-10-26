@@ -17,7 +17,7 @@ namespace wuffSonic.Models
         [XmlElement(ElementName = "artistInfo2")]
         public ArtistInfo artistInfo { get; set; }
     }
-    public class GetArtistInfo2 : Request
+    public class GetArtistInfo2 : Request<GetArtistInfo2Response>
     {
         /// <summary>
         /// Similar to getArtistInfo, but organizes music according to ID3 tags.

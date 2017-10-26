@@ -48,7 +48,7 @@ namespace wuffSonic.Models
         [XmlElement(ElementName = "entry")]
         public Entry[] entry { get; set; }
     }
-    public class GetPlaylists : Request
+    public class GetPlaylists : Request<GetPlaylistsResponse>
     {
         /// <summary>
         /// Returns all playlists a user is allowed to play.

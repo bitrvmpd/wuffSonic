@@ -22,7 +22,7 @@ namespace wuffSonic.Models
         [XmlElement(ElementName = "user")]
         public User[] user { get; set; }
     }
-    public class GetUsers : Request
+    public class GetUsers : Request<GetUsersResponse>
     {
         /// <summary>
         /// Get details about all users, including which authorization roles and folder access they have. 

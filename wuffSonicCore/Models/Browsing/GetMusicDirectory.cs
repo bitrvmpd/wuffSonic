@@ -32,7 +32,7 @@ namespace wuffSonic.Models
         [XmlElement(ElementName = "child")]
         public Child[] child { get; set; }
     }
-    public class GetMusicDirectory : Request
+    public class GetMusicDirectory : Request<GetMusicDirectoryResponse>
     {
         /// <summary>
         /// Returns a listing of all files in a music directory. Typically used to get list of albums for an artist, or list of songs for an album.

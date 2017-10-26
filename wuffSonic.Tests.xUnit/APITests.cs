@@ -25,7 +25,7 @@ namespace wuffSonic.Tests.xUnit
             };
             string expectedStatus = "ok";
             //Act
-            var response = p.DoRequest<PingResponse>().Result;
+            var response = p.DoRequest().Result;
             //Assert
             Assert.Equal<string>(expectedStatus, response.status);
         }
@@ -49,7 +49,7 @@ namespace wuffSonic.Tests.xUnit
             //Assert
             Assert.Throws<SubsonicException>(()=>{
                 //Act
-                p.DoRequest<PingResponse>().GetAwaiter().GetResult();
+                p.DoRequest().GetAwaiter().GetResult();
             });
         }
 
@@ -62,7 +62,7 @@ namespace wuffSonic.Tests.xUnit
             //Assert
             Assert.Throws<SubsonicException>(() => {
                 //Act
-                p.DoRequest<PingResponse>().GetAwaiter().GetResult();
+                p.DoRequest().GetAwaiter().GetResult();
             });
         }
 
@@ -76,7 +76,7 @@ namespace wuffSonic.Tests.xUnit
             };
 
             //Act
-            var response = l.DoRequest<GetLicenseResponse>().GetAwaiter().GetResult();
+            var response = l.DoRequest().GetAwaiter().GetResult();
 
             //Assert
             Assert.Equal<string>(expected, response.status);
@@ -91,7 +91,7 @@ namespace wuffSonic.Tests.xUnit
             };
 
             //Act
-            var response = mf.DoRequest<GetMusicFoldersResponse>().GetAwaiter().GetResult();
+            var response = mf.DoRequest().GetAwaiter().GetResult();
 
             //Assert
             Assert.Equal<string>(expected, response.status);
@@ -106,7 +106,7 @@ namespace wuffSonic.Tests.xUnit
             };
 
             //Act
-            var response = i.DoRequest<GetIndexesResponse>().GetAwaiter().GetResult();
+            var response = i.DoRequest().GetAwaiter().GetResult();
 
             //Assert
             Assert.Equal<string>(expected, response.status);
@@ -119,7 +119,7 @@ namespace wuffSonic.Tests.xUnit
                 Credentials = c
             };
 
-            var response = i.DoRequest<GetIndexesResponse>().GetAwaiter().GetResult();
+            var response = i.DoRequest().GetAwaiter().GetResult();
 
             //Arrange
             GetMusicDirectory md = new GetMusicDirectory(response.indexes.index[0].artist[0].id)
@@ -128,7 +128,7 @@ namespace wuffSonic.Tests.xUnit
             };
 
             //Act
-            var response2 = md.DoRequest<GetMusicDirectoryResponse>().GetAwaiter().GetResult();
+            var response2 = md.DoRequest().GetAwaiter().GetResult();
 
             //Assert
             Assert.Equal<string>(expected, response2.status);
@@ -143,7 +143,7 @@ namespace wuffSonic.Tests.xUnit
             };
 
             //Act
-            var response = g.DoRequest<GetGenresResponse>().GetAwaiter().GetResult();
+            var response = g.DoRequest().GetAwaiter().GetResult();
 
             //Assert
             Assert.Equal<string>(expected, response.status);
@@ -158,7 +158,7 @@ namespace wuffSonic.Tests.xUnit
             };
 
             //Act
-            var response = a.DoRequest<GetArtistsResponse>().GetAwaiter().GetResult();
+            var response = a.DoRequest().GetAwaiter().GetResult();
 
             //Assert
             Assert.Equal<string>(expected, response.status);
@@ -172,7 +172,7 @@ namespace wuffSonic.Tests.xUnit
             };
 
 
-            var response = ar.DoRequest<GetArtistsResponse>().GetAwaiter().GetResult();
+            var response = ar.DoRequest().GetAwaiter().GetResult();
             //Arrange
             GetArtist a = new GetArtist(response.artists.index[0].artist[0].id)
             {
@@ -180,7 +180,7 @@ namespace wuffSonic.Tests.xUnit
             };
 
             //Act
-            var response2 = a.DoRequest<GetArtistResponse>().GetAwaiter().GetResult();
+            var response2 = a.DoRequest().GetAwaiter().GetResult();
 
             //Assert
             Assert.Equal<string>(expected, response2.status);
@@ -193,14 +193,14 @@ namespace wuffSonic.Tests.xUnit
                 Credentials = c
             };
 
-            var response = ar.DoRequest<GetArtistsResponse>().GetAwaiter().GetResult();
+            var response = ar.DoRequest().GetAwaiter().GetResult();
 
             GetArtist a = new GetArtist(response.artists.index[0].artist[0].id)
             {
                 Credentials = c
             };
 
-            var response2 = a.DoRequest<GetArtistResponse>().GetAwaiter().GetResult();
+            var response2 = a.DoRequest().GetAwaiter().GetResult();
 
             //Arrange
             GetAlbum al = new GetAlbum(response2.artist.album[0].id)
@@ -209,7 +209,7 @@ namespace wuffSonic.Tests.xUnit
             };
 
             //Act
-            var response3 = al.DoRequest<GetAlbumResponse>().GetAwaiter().GetResult();
+            var response3 = al.DoRequest().GetAwaiter().GetResult();
 
             //Assert
             Assert.Equal<string>(expected, response3.status);
@@ -222,14 +222,14 @@ namespace wuffSonic.Tests.xUnit
                 Credentials = c
             };
 
-            var response = ar.DoRequest<GetArtistsResponse>().GetAwaiter().GetResult();
+            var response = ar.DoRequest().GetAwaiter().GetResult();
 
             GetArtist a = new GetArtist(response.artists.index[0].artist[0].id)
             {
                 Credentials = c
             };
 
-            var response2 = a.DoRequest<GetArtistResponse>().GetAwaiter().GetResult();
+            var response2 = a.DoRequest().GetAwaiter().GetResult();
 
             //Arrange
             GetAlbum al = new GetAlbum(response2.artist.album[0].id)
@@ -238,7 +238,7 @@ namespace wuffSonic.Tests.xUnit
             };
 
             //Act
-            var response3 = al.DoRequest<GetAlbumResponse>().GetAwaiter().GetResult();
+            var response3 = al.DoRequest().GetAwaiter().GetResult();
 
             //Arrange
             GetSong s = new GetSong(response3.album.song[0].id)
@@ -246,7 +246,7 @@ namespace wuffSonic.Tests.xUnit
                 Credentials = c
             };
             //Act
-            var response4 = s.DoRequest<GetSongResponse>().GetAwaiter().GetResult();
+            var response4 = s.DoRequest().GetAwaiter().GetResult();
             //Assert
             Assert.Equal<string>(expected, response3.status);
         }
@@ -260,7 +260,7 @@ namespace wuffSonic.Tests.xUnit
             };
 
             //Act
-            var response = v.DoRequest<GetVideosResponse>().GetAwaiter().GetResult();
+            var response = v.DoRequest().GetAwaiter().GetResult();
 
             //Assert
             Assert.Equal<string>(expected, response.status);
@@ -273,14 +273,14 @@ namespace wuffSonic.Tests.xUnit
                 Credentials = c
             };
 
-            var response = ar.DoRequest<GetArtistsResponse>().GetAwaiter().GetResult();
+            var response = ar.DoRequest().GetAwaiter().GetResult();
             //Arrange
             GetArtistInfo ai = new GetArtistInfo(response.artists.index[0].artist[0].id)
             {
                 Credentials = c
             };
             //Act
-            var response2 = ai.DoRequest<GetArtistInfoResponse>().GetAwaiter().GetResult();
+            var response2 = ai.DoRequest().GetAwaiter().GetResult();
             //Assert
             Assert.Equal<string>(expected, response2.status);
         }
@@ -292,14 +292,14 @@ namespace wuffSonic.Tests.xUnit
                 Credentials = c
             };
 
-            var response = ar.DoRequest<GetArtistsResponse>().GetAwaiter().GetResult();
+            var response = ar.DoRequest().GetAwaiter().GetResult();
             //Arrange
             GetArtistInfo2 ai = new GetArtistInfo2(response.artists.index[0].artist[0].id)
             {
                 Credentials = c
             };
             //Act
-            var response2 = ai.DoRequest<GetArtistInfo2Response>().GetAwaiter().GetResult();
+            var response2 = ai.DoRequest().GetAwaiter().GetResult();
             //Assert
             Assert.Equal<string>(expected, response2.status);
         }
@@ -312,7 +312,7 @@ namespace wuffSonic.Tests.xUnit
                 Credentials = c
             };
 
-            var response = ar.DoRequest<GetArtistsResponse>().GetAwaiter().GetResult();
+            var response = ar.DoRequest().GetAwaiter().GetResult();
             //Arrange
 
             GetSimilarSongs ss = new GetSimilarSongs(response.artists.index[0].artist[0].id)
@@ -321,7 +321,7 @@ namespace wuffSonic.Tests.xUnit
             };
 
             //Act
-            var response2 = ss.DoRequest<GetSimilarSongsResponse>().GetAwaiter().GetResult();
+            var response2 = ss.DoRequest().GetAwaiter().GetResult();
 
             //Assert
             Assert.Equal<string>(expected, response2.status);
@@ -335,7 +335,7 @@ namespace wuffSonic.Tests.xUnit
                 Credentials = c
             };
 
-            var response = ar.DoRequest<GetArtistsResponse>().GetAwaiter().GetResult();
+            var response = ar.DoRequest().GetAwaiter().GetResult();
             //Arrange
 
             GetSimilarSongs2 ss = new GetSimilarSongs2(response.artists.index[0].artist[0].id)
@@ -344,7 +344,7 @@ namespace wuffSonic.Tests.xUnit
             };
 
             //Act
-            var response2 = ss.DoRequest<GetSimilarSongs2Response>().GetAwaiter().GetResult();
+            var response2 = ss.DoRequest().GetAwaiter().GetResult();
 
             //Assert
             Assert.Equal<string>(expected, response2.status);
@@ -358,14 +358,14 @@ namespace wuffSonic.Tests.xUnit
                 Credentials = c
             };
 
-            var response = ar.DoRequest<GetArtistsResponse>().GetAwaiter().GetResult();
+            var response = ar.DoRequest().GetAwaiter().GetResult();
             //Arrange
             GetTopSongs ss = new GetTopSongs(response.artists.index[0].artist[0].name)
             {
                 Credentials = c
             };
             //Act
-            var response2 = ss.DoRequest<GetTopSongsResponse>().GetAwaiter().GetResult();
+            var response2 = ss.DoRequest().GetAwaiter().GetResult();
             //Assert
             Assert.Equal<string>(expected, response2.status);
         }
@@ -376,7 +376,7 @@ namespace wuffSonic.Tests.xUnit
             {
                 Credentials = c
             };
-            var response = al.DoRequest<GetAlbumListResponse>().GetAwaiter().GetResult();
+            var response = al.DoRequest().GetAwaiter().GetResult();
 
             Assert.Equal<string>(expected, response.status);
         }
@@ -387,7 +387,7 @@ namespace wuffSonic.Tests.xUnit
             {
                 Credentials = c
             };
-            var response = al.DoRequest<GetAlbumListResponse>().GetAwaiter().GetResult();
+            var response = al.DoRequest().GetAwaiter().GetResult();
 
             Assert.Equal<string>(expected, response.status);
         }
@@ -398,7 +398,7 @@ namespace wuffSonic.Tests.xUnit
             {
                 Credentials = c
             };
-            var response = al.DoRequest<GetAlbumListResponse>().GetAwaiter().GetResult();
+            var response = al.DoRequest().GetAwaiter().GetResult();
 
             Assert.Equal<string>(expected, response.status);
         }
@@ -409,7 +409,7 @@ namespace wuffSonic.Tests.xUnit
             {
                 Credentials = c
             };
-            var response = al.DoRequest<GetAlbumListResponse>().GetAwaiter().GetResult();
+            var response = al.DoRequest().GetAwaiter().GetResult();
 
             Assert.Equal<string>(expected, response.status);
         }
@@ -420,7 +420,7 @@ namespace wuffSonic.Tests.xUnit
             {
                 Credentials = c
             };
-            var response = al.DoRequest<GetAlbumListResponse>().GetAwaiter().GetResult();
+            var response = al.DoRequest().GetAwaiter().GetResult();
 
             Assert.Equal<string>(expected, response.status);
         }
@@ -431,7 +431,7 @@ namespace wuffSonic.Tests.xUnit
             {
                 Credentials = c
             };
-            var response = al.DoRequest<GetAlbumListResponse>().GetAwaiter().GetResult();
+            var response = al.DoRequest().GetAwaiter().GetResult();
 
             Assert.Equal<string>(expected, response.status);
         }
@@ -442,7 +442,7 @@ namespace wuffSonic.Tests.xUnit
             {
                 Credentials = c
             };
-            var response = al.DoRequest<GetAlbumListResponse>().GetAwaiter().GetResult();
+            var response = al.DoRequest().GetAwaiter().GetResult();
 
             Assert.Equal<string>(expected, response.status);
         }
@@ -453,7 +453,7 @@ namespace wuffSonic.Tests.xUnit
             {
                 Credentials = c
             };
-            var response = al.DoRequest<GetAlbumListResponse>().GetAwaiter().GetResult();
+            var response = al.DoRequest().GetAwaiter().GetResult();
 
             Assert.Equal<string>(expected, response.status);
         }
@@ -464,7 +464,7 @@ namespace wuffSonic.Tests.xUnit
             {
                 Credentials = c
             };
-            var response = al.DoRequest<GetAlbumListResponse>().GetAwaiter().GetResult();
+            var response = al.DoRequest().GetAwaiter().GetResult();
 
             Assert.Equal<string>(expected, response.status);
         }
@@ -475,7 +475,7 @@ namespace wuffSonic.Tests.xUnit
             {
                 Credentials = c
             };
-            var response = al.DoRequest<GetAlbumListResponse>().GetAwaiter().GetResult();
+            var response = al.DoRequest().GetAwaiter().GetResult();
 
             Assert.Equal<string>(expected, response.status);
         }

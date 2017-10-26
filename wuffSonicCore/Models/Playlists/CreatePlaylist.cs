@@ -15,7 +15,7 @@ namespace wuffSonic.Models
         [XmlAttribute(AttributeName = "status")]
         public string status { get; set; }
     }
-    public class CreatePlaylist : Request
+    public class CreatePlaylist : Request<CreatePlaylistResponse>
     {
         /// <summary>
         /// Creates a playlist.
