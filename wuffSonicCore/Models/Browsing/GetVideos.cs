@@ -63,8 +63,7 @@ namespace wuffSonic.Models
     {
         /// <summary>
         /// Returns all video files.
-        /// </summary>
-        /// <param name="id"></param>
+        /// </summary>       
         public GetVideos()
            : base(null)
         {

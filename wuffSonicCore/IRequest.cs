@@ -41,7 +41,7 @@ namespace wuffSonic
 
     public abstract class Request : IRequest
     {
-        public virtual Dictionary<string, string> parameters { get; set; }            
+        public Dictionary<string, string> Parameters { get; set; }            
         public virtual string method { get; }
         public Credentials Credentials { get; set; }
 
@@ -49,13 +49,13 @@ namespace wuffSonic
 
         public Request(params string[] args)
         {            
-            parameters = new Dictionary<string, string>();
+            Parameters = new Dictionary<string, string>();
             if (args != null)
             {
                 for (int i = 0; i < args.Length; i += 2)
                 {
                     if (args[i] != null && args[i + 1] != null)
-                        parameters.Add(args[i], args[i + 1]);
+                        Parameters.Add(args[i], args[i + 1]);
                 }
             }
         }
@@ -75,9 +75,9 @@ namespace wuffSonic
                 };
 
             string param = "";
-            if (parameters != null)
+            if (Parameters != null)
             {
-                foreach (var item in parameters)
+                foreach (var item in Parameters)
                 {
                     param += String.Format("&{0}={1}",
                         item.Key,
@@ -119,7 +119,7 @@ namespace wuffSonic
 
     public abstract class StreamRequest : IRequest
     {
-        public virtual Dictionary<string, string> parameters { get; set; }
+        public Dictionary<string, string> Parameters { get; set; }
         public virtual Credentials Credentials { get; set; }
         public virtual string method { get; }       
 
@@ -127,13 +127,13 @@ namespace wuffSonic
 
         public StreamRequest(params string[] args)
         {
-            parameters = new Dictionary<string, string>();
+            Parameters = new Dictionary<string, string>();
             if (args != null)
             {
                 for (int i = 0; i < args.Length; i += 2)
                 {
                     if (args[i] != null && args[i + 1] != null)
-                        parameters.Add(args[i], args[i + 1]);
+                        Parameters.Add(args[i], args[i + 1]);
                 }
             }
         }
@@ -145,9 +145,9 @@ namespace wuffSonic
         public virtual string getRequest()
         {
             string param = "";
-            if (parameters != null)
+            if (Parameters != null)
             {
-                foreach (var item in parameters)
+                foreach (var item in Parameters)
                 {
                     param += String.Format("&{0}={1}",
                         item.Key,

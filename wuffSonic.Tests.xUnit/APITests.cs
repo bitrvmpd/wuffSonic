@@ -1,23 +1,21 @@
-﻿using System;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using wuffSonic.Models;
+using System;
 using wuffSonic;
-using System.Diagnostics;
- 
-namespace UnitTests
+using wuffSonic.Models;
+using Xunit;
+
+namespace wuffSonic.Tests.xUnit
 {
-    [TestClass]
     public class APITests
     {
         static Credentials c = new Credentials(
                 appName: "wuffSonic",
-                user: "edo",
-                password: "------",
+                user: "wuff",
+                password: "-----",
                 version: "1.11",
                 uri: "http://music.haus.foxburu.mx"
                 );
         static string expected = "ok";
-        [TestMethod]
+        [Fact]
         public void Ping_WithValidCredentials()
         {
             //Arrange
@@ -29,11 +27,10 @@ namespace UnitTests
             //Act
             var response = p.DoRequest<PingResponse>().Result;
             //Assert
-            Assert.AreEqual<string>(expectedStatus, response.status);
+            Assert.Equal<string>(expectedStatus, response.status);
         }
 
-        [TestMethod]
-        [ExpectedException(typeof(SubsonicException))]
+        [Fact]
         public void Ping_WithInvalidCredentials()
         {
             //Arrange
@@ -48,22 +45,28 @@ namespace UnitTests
             {
                 Credentials = c
             };
-            //Act
-            p.DoRequest<PingResponse>().GetAwaiter().GetResult();
+
+            //Assert
+            Assert.Throws<SubsonicException>(()=>{
+                //Act
+                p.DoRequest<PingResponse>().GetAwaiter().GetResult();
+            });
         }
 
-        [TestMethod]
-        [ExpectedException(typeof(SubsonicException))]
+        [Fact]
         public void Ping_NoCredentials()
         {
             //Arrange            
             Ping p = new Ping();
 
-            //Act
-            p.DoRequest<PingResponse>().GetAwaiter().GetResult();
+            //Assert
+            Assert.Throws<SubsonicException>(() => {
+                //Act
+                p.DoRequest<PingResponse>().GetAwaiter().GetResult();
+            });
         }
 
-        [TestMethod]
+        [Fact]
         public void GetLicense()
         {
             //Arrange
@@ -76,9 +79,9 @@ namespace UnitTests
             var response = l.DoRequest<GetLicenseResponse>().GetAwaiter().GetResult();
 
             //Assert
-            Assert.AreEqual<string>(expected, response.status);
+            Assert.Equal<string>(expected, response.status);
         }
-        [TestMethod]
+        [Fact]
         public void GetMusicFolders()
         {
             //Arrange
@@ -91,9 +94,9 @@ namespace UnitTests
             var response = mf.DoRequest<GetMusicFoldersResponse>().GetAwaiter().GetResult();
 
             //Assert
-            Assert.AreEqual<string>(expected, response.status);
+            Assert.Equal<string>(expected, response.status);
         }
-        [TestMethod]
+        [Fact]
         public void GetIndexes()
         {
             //Arrange
@@ -106,9 +109,9 @@ namespace UnitTests
             var response = i.DoRequest<GetIndexesResponse>().GetAwaiter().GetResult();
 
             //Assert
-            Assert.AreEqual<string>(expected, response.status);
+            Assert.Equal<string>(expected, response.status);
         }
-        [TestMethod]
+        [Fact]
         public void GetMusicDirectory()
         {
             GetIndexes i = new GetIndexes()
@@ -128,9 +131,9 @@ namespace UnitTests
             var response2 = md.DoRequest<GetMusicDirectoryResponse>().GetAwaiter().GetResult();
 
             //Assert
-            Assert.AreEqual<string>(expected, response2.status);
+            Assert.Equal<string>(expected, response2.status);
         }
-        [TestMethod]
+        [Fact]
         public void GetGenres()
         {
             //Arrange
@@ -143,9 +146,9 @@ namespace UnitTests
             var response = g.DoRequest<GetGenresResponse>().GetAwaiter().GetResult();
 
             //Assert
-            Assert.AreEqual<string>(expected, response.status);
+            Assert.Equal<string>(expected, response.status);
         }
-        [TestMethod]
+        [Fact]
         public void GetArtists()
         {
             //Arrange
@@ -158,9 +161,9 @@ namespace UnitTests
             var response = a.DoRequest<GetArtistsResponse>().GetAwaiter().GetResult();
 
             //Assert
-            Assert.AreEqual<string>(expected, response.status);
+            Assert.Equal<string>(expected, response.status);
         }
-        [TestMethod]
+        [Fact]
         public void GetArtist()
         {
             GetArtists ar = new GetArtists()
@@ -180,9 +183,9 @@ namespace UnitTests
             var response2 = a.DoRequest<GetArtistResponse>().GetAwaiter().GetResult();
 
             //Assert
-            Assert.AreEqual<string>(expected, response2.status);
+            Assert.Equal<string>(expected, response2.status);
         }
-        [TestMethod]
+        [Fact]
         public void GetAlbum()
         {
             GetArtists ar = new GetArtists()
@@ -209,9 +212,9 @@ namespace UnitTests
             var response3 = al.DoRequest<GetAlbumResponse>().GetAwaiter().GetResult();
 
             //Assert
-            Assert.AreEqual<string>(expected, response3.status);
+            Assert.Equal<string>(expected, response3.status);
         }
-        [TestMethod]
+        [Fact]
         public void GetSong()
         {
             GetArtists ar = new GetArtists()
@@ -245,9 +248,9 @@ namespace UnitTests
             //Act
             var response4 = s.DoRequest<GetSongResponse>().GetAwaiter().GetResult();
             //Assert
-            Assert.AreEqual<string>(expected, response3.status);
+            Assert.Equal<string>(expected, response3.status);
         }
-        [TestMethod]
+        [Fact]
         public void GetVideos()
         {
             //Arrange
@@ -260,9 +263,9 @@ namespace UnitTests
             var response = v.DoRequest<GetVideosResponse>().GetAwaiter().GetResult();
 
             //Assert
-            Assert.AreEqual<string>(expected, response.status);
+            Assert.Equal<string>(expected, response.status);
         }
-        [TestMethod]
+        [Fact]
         public void GetArtistInfo()
         {
             GetArtists ar = new GetArtists()
@@ -279,9 +282,9 @@ namespace UnitTests
             //Act
             var response2 = ai.DoRequest<GetArtistInfoResponse>().GetAwaiter().GetResult();
             //Assert
-            Assert.AreEqual<string>(expected, response2.status);
+            Assert.Equal<string>(expected, response2.status);
         }
-        [TestMethod]
+        [Fact]
         public void GetArtistInfo2()
         {
             GetArtists ar = new GetArtists()
@@ -298,10 +301,10 @@ namespace UnitTests
             //Act
             var response2 = ai.DoRequest<GetArtistInfo2Response>().GetAwaiter().GetResult();
             //Assert
-            Assert.AreEqual<string>(expected, response2.status);
+            Assert.Equal<string>(expected, response2.status);
         }
-        [TestMethod]
-        [ExpectedException(typeof(SubsonicException))]
+        [Fact]
+        //[ExpectedException(typeof(SubsonicException))]
         public void GetSimilarSongs()
         {
             GetArtists ar = new GetArtists()
@@ -321,10 +324,10 @@ namespace UnitTests
             var response2 = ss.DoRequest<GetSimilarSongsResponse>().GetAwaiter().GetResult();
 
             //Assert
-            Assert.AreEqual<string>(expected, response2.status);
+            Assert.Equal<string>(expected, response2.status);
         }
-        [TestMethod]
-        [ExpectedException(typeof(SubsonicException))]
+        [Fact]
+        //[ExpectedException(typeof(SubsonicException))]
         public void GetSimilarSongs2()
         {
             GetArtists ar = new GetArtists()
@@ -344,10 +347,10 @@ namespace UnitTests
             var response2 = ss.DoRequest<GetSimilarSongs2Response>().GetAwaiter().GetResult();
 
             //Assert
-            Assert.AreEqual<string>(expected, response2.status);
+            Assert.Equal<string>(expected, response2.status);
         }
-        [TestMethod]
-        [ExpectedException(typeof(SubsonicException))]
+        [Fact]
+        //[ExpectedException(typeof(SubsonicException))]
         public void GetTopSongs()
         {
             GetArtists ar = new GetArtists()
@@ -364,9 +367,9 @@ namespace UnitTests
             //Act
             var response2 = ss.DoRequest<GetTopSongsResponse>().GetAwaiter().GetResult();
             //Assert
-            Assert.AreEqual<string>(expected, response2.status);
+            Assert.Equal<string>(expected, response2.status);
         }
-        [TestMethod]
+        [Fact]
         public void GetAlbumList_alpabheticalByArtist()
         {
             GetAlbumList al = new GetAlbumList(ListType.alphabeticalByArtist)
@@ -375,9 +378,9 @@ namespace UnitTests
             };
             var response = al.DoRequest<GetAlbumListResponse>().GetAwaiter().GetResult();
 
-            Assert.AreEqual<string>(expected, response.status);
+            Assert.Equal<string>(expected, response.status);
         }
-        [TestMethod]
+        [Fact]
         public void GetAlbumList_alphabeticalByName()
         {
             GetAlbumList al = new GetAlbumList(ListType.alphabeticalByName)
@@ -386,9 +389,9 @@ namespace UnitTests
             };
             var response = al.DoRequest<GetAlbumListResponse>().GetAwaiter().GetResult();
 
-            Assert.AreEqual<string>(expected, response.status);
+            Assert.Equal<string>(expected, response.status);
         }
-        [TestMethod]
+        [Fact]
         public void GetAlbumList_frequent()
         {
             GetAlbumList al = new GetAlbumList(ListType.frequent)
@@ -397,9 +400,9 @@ namespace UnitTests
             };
             var response = al.DoRequest<GetAlbumListResponse>().GetAwaiter().GetResult();
 
-            Assert.AreEqual<string>(expected, response.status);
+            Assert.Equal<string>(expected, response.status);
         }
-        [TestMethod]
+        [Fact]
         public void GetAlbumList_highest()
         {
             GetAlbumList al = new GetAlbumList(ListType.highest)
@@ -408,9 +411,9 @@ namespace UnitTests
             };
             var response = al.DoRequest<GetAlbumListResponse>().GetAwaiter().GetResult();
 
-            Assert.AreEqual<string>(expected, response.status);
+            Assert.Equal<string>(expected, response.status);
         }
-        [TestMethod]
+        [Fact]
         public void GetAlbumList_newest()
         {
             GetAlbumList al = new GetAlbumList(ListType.newest)
@@ -419,9 +422,9 @@ namespace UnitTests
             };
             var response = al.DoRequest<GetAlbumListResponse>().GetAwaiter().GetResult();
 
-            Assert.AreEqual<string>(expected, response.status);
+            Assert.Equal<string>(expected, response.status);
         }
-        [TestMethod]
+        [Fact]
         public void GetAlbumList_random()
         {
             GetAlbumList al = new GetAlbumList(ListType.random)
@@ -430,9 +433,9 @@ namespace UnitTests
             };
             var response = al.DoRequest<GetAlbumListResponse>().GetAwaiter().GetResult();
 
-            Assert.AreEqual<string>(expected, response.status);
+            Assert.Equal<string>(expected, response.status);
         }
-        [TestMethod]
+        [Fact]
         public void GetAlbumList_recent()
         {
             GetAlbumList al = new GetAlbumList(ListType.recent)
@@ -441,9 +444,9 @@ namespace UnitTests
             };
             var response = al.DoRequest<GetAlbumListResponse>().GetAwaiter().GetResult();
 
-            Assert.AreEqual<string>(expected, response.status);
+            Assert.Equal<string>(expected, response.status);
         }
-        [TestMethod]
+        [Fact]
         public void GetAlbumList_starred()
         {
             GetAlbumList al = new GetAlbumList(ListType.starred)
@@ -452,9 +455,9 @@ namespace UnitTests
             };
             var response = al.DoRequest<GetAlbumListResponse>().GetAwaiter().GetResult();
 
-            Assert.AreEqual<string>(expected, response.status);
+            Assert.Equal<string>(expected, response.status);
         }
-        [TestMethod]
+        [Fact]
         public void GetAlbumList_genre()
         {
             GetAlbumList al = new GetAlbumList(genre: "rock")
@@ -463,9 +466,9 @@ namespace UnitTests
             };
             var response = al.DoRequest<GetAlbumListResponse>().GetAwaiter().GetResult();
 
-            Assert.AreEqual<string>(expected, response.status);
+            Assert.Equal<string>(expected, response.status);
         }
-        [TestMethod]
+        [Fact]
         public void GetAlbumList_year()
         {
             GetAlbumList al = new GetAlbumList(fromYear: "1990", toYear: "2015")
@@ -474,7 +477,7 @@ namespace UnitTests
             };
             var response = al.DoRequest<GetAlbumListResponse>().GetAwaiter().GetResult();
 
-            Assert.AreEqual<string>(expected, response.status);
+            Assert.Equal<string>(expected, response.status);
         }
     }
 }

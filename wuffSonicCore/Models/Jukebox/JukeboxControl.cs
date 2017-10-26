@@ -143,14 +143,14 @@ namespace wuffSonic.Models
                  "action", JukeboxControlAction.add.ToString(),
                  nameof(id), id
                 );
-            return await DoRequest<JukeboxControlResponse>(); ;
+            return await DoRequest<JukeboxControlResponse>();
         }
         public async Task<JukeboxControlResponse> Clear()
         {
             UpdateParams(
                  "action", JukeboxControlAction.clear.ToString()
                 );
-            return await DoRequest<JukeboxControlResponse>(); ;
+            return await DoRequest<JukeboxControlResponse>();
         }
         /// <summary>
         /// Remove a song of the jukebox playlist.
@@ -188,13 +188,13 @@ namespace wuffSonic.Models
 
         private void UpdateParams(params string[] args)
         {
-            parameters = new Dictionary<string, string>();
+            Parameters = new Dictionary<string, string>();
             if (args != null)
             {
                 for (int i = 0; i < args.Length; i += 2)
                 {
                     if (args[i] != null && args[i + 1] != null)
-                        parameters.Add(args[i], args[i + 1]);
+                        Parameters.Add(args[i], args[i + 1]);
                 }
             }
         }

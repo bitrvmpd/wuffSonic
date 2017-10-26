@@ -20,7 +20,7 @@ namespace wuffSonic.Models
         /// <summary>
         /// Deletes an existing Subsonic user, using the following parameters:
         /// </summary>
-        /// <param name="username"The name of the user to delete.></param>
+        /// <param name="username">The name of the user to delete.</param>
         public DeleteUser(string username)
            : base(nameof(username), username)
         {
