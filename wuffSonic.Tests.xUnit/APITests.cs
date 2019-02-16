@@ -9,10 +9,10 @@ namespace wuffSonic.Tests.xUnit
     {
         static Credentials c = new Credentials(
                 appName: "wuffSonic",
-                user: "wuff",
-                password: "-----",
+                user: "guest2",
+                password: "guest",
                 version: "1.11",
-                uri: "http://music.haus.foxburu.mx"
+                uri: "http://demo.subsonic.org"
                 );
         static string expected = "ok";
         [Fact]
@@ -39,7 +39,7 @@ namespace wuffSonic.Tests.xUnit
                 user: "edo",
                 password: "00000ddddd",
                 version: "1.11",
-                uri: "http://music.haus.foxburu.mx"
+                uri: "http://demo.subsonic.org"
                 );
             Ping p = new Ping()
             {
