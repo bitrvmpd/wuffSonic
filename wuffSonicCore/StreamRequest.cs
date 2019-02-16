@@ -3,13 +3,14 @@ using System.Collections.Generic;
 using System.IO;
 using System.Net.Http;
 using System.Threading.Tasks;
-using wuffSonic;
 
-public abstract class StreamRequest : IRequest
+namespace wuffSonic
+{
+    public abstract class StreamRequest : IRequest
     {
         public Dictionary<string, string> Parameters { get; set; }
         public virtual Credentials Credentials { get; set; }
-        public virtual string method { get; }       
+        public virtual string method { get; }
 
         public object _response;
 
@@ -62,3 +63,4 @@ public abstract class StreamRequest : IRequest
             return memStream;
         }
     }
+}

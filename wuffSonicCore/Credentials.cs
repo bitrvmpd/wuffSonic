@@ -1,7 +1,9 @@
 using System;
 using System.Text;
 
-public class Credentials
+namespace wuffSonic
+{
+    public class Credentials
     {
         private string _password;
         public string uri { get; set; }
@@ -14,7 +16,7 @@ public class Credentials
             set { _password = BitConverter.ToString(Encoding.UTF8.GetBytes(value)).Replace("-", ""); }
         }
 
-        public Credentials(string uri,string version,string appName,string user,string password)
+        public Credentials(string uri, string version, string appName, string user, string password)
         {
             this.uri = uri;
             this.version = version;
@@ -23,3 +25,4 @@ public class Credentials
             this.password = password;
         }
     }
+}

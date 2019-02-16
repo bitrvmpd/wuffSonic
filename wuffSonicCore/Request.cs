@@ -4,18 +4,19 @@ using System.IO;
 using System.Net.Http;
 using System.Threading.Tasks;
 using System.Xml.Serialization;
-using wuffSonic;
 
-public abstract class Request<T> : IRequest
+namespace wuffSonic
+{
+    public abstract class Request<T> : IRequest
     {
-        public Dictionary<string, string> Parameters { get; set; }            
+        public Dictionary<string, string> Parameters { get; set; }
         public virtual string method { get; }
         public Credentials Credentials { get; set; }
 
         public object _response;
 
         public Request(params string[] args)
-        {            
+        {
             Parameters = new Dictionary<string, string>();
             if (args != null)
             {
@@ -83,3 +84,4 @@ public abstract class Request<T> : IRequest
 
         }
     }
+}
