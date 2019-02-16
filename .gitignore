@@ -216,3 +216,6 @@ ModelManifest.xml
 
 # MacOS .DS_Store
 .DS_Store
+
+# vscode
+.vscode
