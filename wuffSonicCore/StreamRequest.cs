@@ -43,14 +43,28 @@ namespace wuffSonic
                         item.Value);
                 }
             }
-            return String.Format("{0}/rest/{1}?u={2}&p=enc:{3}&c={4}&v={5}{6}",
-                Credentials.uri,
-                method,
-                Credentials.user,
-                Credentials.password,
-                Credentials.appName,
-                Credentials.version,
-                param);
+            if (Version.Parse(Credentials.version) >= Version.Parse("1.13.0"))
+            {
+                Credentials.RegenerateSalt();
+                return String.Format("{0}/rest/{1}?u={2}&s={3}&t={4}&c={5}&v={6}{7}",
+                    Credentials.uri,
+                    method,
+                    Credentials.user,
+                    Credentials.salt,
+                    Credentials.token,
+                    Credentials.appName,
+                    Credentials.version,
+                    param);
+            }
+            else
+                return String.Format("{0}/rest/{1}?u={2}&p=enc:{3}&c={4}&v={5}{6}",
+                    Credentials.uri,
+                    method,
+                    Credentials.user,
+                    Credentials.password,
+                    Credentials.appName,
+                    Credentials.version,
+                    param);
         }
 
         public virtual async Task<MemoryStream> DoRequest()

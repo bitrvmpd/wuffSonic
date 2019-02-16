@@ -7,14 +7,16 @@ namespace wuffSonic.Tests.xUnit
 {
     public class APITests
     {
+        static string version = "1.13.0";
+        static string expected = "ok";
         static Credentials c = new Credentials(
                 appName: "wuffSonic",
                 user: "guest2",
                 password: "guest",
-                version: "1.11",
+                version: version,
                 uri: "http://demo.subsonic.org"
                 );
-        static string expected = "ok";
+
         [Fact]
         public void Ping_WithValidCredentials()
         {
@@ -38,7 +40,7 @@ namespace wuffSonic.Tests.xUnit
                 appName: "wuffSonic",
                 user: "edo",
                 password: "00000ddddd",
-                version: "1.11",
+                version: version,
                 uri: "http://demo.subsonic.org"
                 );
             Ping p = new Ping()
@@ -47,7 +49,8 @@ namespace wuffSonic.Tests.xUnit
             };
 
             //Assert
-            Assert.Throws<SubsonicException>(()=>{
+            Assert.Throws<SubsonicException>(() =>
+            {
                 //Act
                 p.DoRequest().GetAwaiter().GetResult();
             });
@@ -60,7 +63,8 @@ namespace wuffSonic.Tests.xUnit
             Ping p = new Ping();
 
             //Assert
-            Assert.Throws<SubsonicException>(() => {
+            Assert.Throws<SubsonicException>(() =>
+            {
                 //Act
                 p.DoRequest().GetAwaiter().GetResult();
             });
