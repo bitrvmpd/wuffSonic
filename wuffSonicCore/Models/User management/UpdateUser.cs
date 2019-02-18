@@ -36,6 +36,7 @@ namespace wuffSonic.Models
         /// <param name="podcastRole">Whether the user is allowed to administrate Podcasts.</param>
         /// <param name="shareRole">Whether the user is allowed to share files with anyone.</param>
         /// <param name="musicFolderId">IDs of the music folders the user is allowed access to. Include the parameter once for each folder.</param>
+        /// <param name="maxBitRate">The maximum bit rate (in Kbps) for the user. Audio streams of higher bit rates are automatically downsampled to this bit rate. Legal values: 0 (no limit), 32, 40, 48, 56, 64, 80, 96, 112, 128, 160, 192, 224, 256, 320.</param>
         public UpdateUser(string username, string password = null, string email = null,
             string ldapAuthenticated = null, string adminRole = null,
             string settingsRole = null, string streamRole = null,
@@ -43,7 +44,7 @@ namespace wuffSonic.Models
             string uploadRole = null, string playlistRole = null,
             string coverArtRole = null, string commentRole = null,
             string podcastRole = null, string shareRole = null,
-            string musicFolderId = null, string maxBitRate = null
+            string musicFolderId = null, Bitrate maxBitRate = Bitrate.KBPS_0
             )
            : base(nameof(username), username, nameof(password),password ,
                   nameof(email),email,nameof(ldapAuthenticated),ldapAuthenticated,
@@ -53,7 +54,7 @@ namespace wuffSonic.Models
                   nameof(playlistRole),playlistRole,nameof(coverArtRole),coverArtRole,
                   nameof(commentRole),commentRole,nameof(podcastRole),podcastRole,
                   nameof(shareRole),shareRole,nameof(musicFolderId),musicFolderId,
-                  nameof(maxBitRate),maxBitRate)
+                  nameof(maxBitRate),((int)maxBitRate).ToString())
         {
 
         }
@@ -70,7 +71,30 @@ namespace wuffSonic.Models
             {
                 return "UpdateUser.view";
             }
-        }
+        }              
     }
+
+    /// <summary>
+    /// The maximum bit rate (in Kbps) for the user. Audio streams of higher bit rates 
+    /// are automatically downsampled to this bit rate. Legal values: 
+    /// 0 (no limit), 32, 40, 48, 56, 64, 80, 96, 112, 128, 160, 192, 224, 256, 320.
+    /// </summary>
+    public enum Bitrate{
+            KBPS_0 = 0,
+            KBPS_32 = 32,
+            KBPS_40 = 40,
+            KBPS_48 = 48,
+            KBPS_56 = 56,
+            KBPS_64 = 64,
+            KBPS_80 = 80,
+            KBPS_96 = 96,
+            KBPS_112 = 112,
+            KBPS_128 = 128,
+            KBPS_160 = 160,
+            KBPS_192 = 192,
+            KBPS_224 = 224,
+            KBPS_256 = 256,            
+            KBPS_320 = 320
+        }   
 }
 
