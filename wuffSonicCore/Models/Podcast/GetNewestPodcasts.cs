@@ -28,8 +28,8 @@ namespace wuffSonic.Models
         /// Returns the most recently published Podcast episodes.
         /// </summary>
         /// <param name="count">The maximum number of episodes to return.</param>
-        public GetNewestPodcasts(string count = "20")
-           : base(nameof(count), count)
+        public GetNewestPodcasts(int count = 20)
+           : base(nameof(count), count.ToString())
         {
 
         }

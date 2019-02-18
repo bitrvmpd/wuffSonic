@@ -29,8 +29,9 @@ namespace wuffSonic.Models
         /// </summary>
         /// <param name="artist">The artist name.</param>
         /// <param name="count">Max number of songs to return.</param>
-        public GetTopSongs(string artist, string count = "50")
-           : base(nameof(artist), artist)
+        public GetTopSongs(string artist, int count = 50)
+           : base(nameof(artist), artist,
+                nameof(count), count.ToString())
         {
 
         }
