@@ -44,7 +44,7 @@ namespace wuffSonic.Models
             string uploadRole = null, string playlistRole = null,
             string coverArtRole = null, string commentRole = null,
             string podcastRole = null, string shareRole = null,
-            string musicFolderId = null, Bitrate maxBitRate = Bitrate.KBPS_0
+            string musicFolderId = null, Bitrate maxBitRate = Bitrate.Kbps_0
             )
            : base(nameof(username), username, nameof(password),password ,
                   nameof(email),email,nameof(ldapAuthenticated),ldapAuthenticated,
@@ -80,21 +80,21 @@ namespace wuffSonic.Models
     /// 0 (no limit), 32, 40, 48, 56, 64, 80, 96, 112, 128, 160, 192, 224, 256, 320.
     /// </summary>
     public enum Bitrate{
-            KBPS_0 = 0,
-            KBPS_32 = 32,
-            KBPS_40 = 40,
-            KBPS_48 = 48,
-            KBPS_56 = 56,
-            KBPS_64 = 64,
-            KBPS_80 = 80,
-            KBPS_96 = 96,
-            KBPS_112 = 112,
-            KBPS_128 = 128,
-            KBPS_160 = 160,
-            KBPS_192 = 192,
-            KBPS_224 = 224,
-            KBPS_256 = 256,            
-            KBPS_320 = 320
+            Kbps_0 = 0,
+            Kbps_32 = 32,
+            Kbps_40 = 40,
+            Kbps_48 = 48,
+            Kbps_56 = 56,
+            Kbps_64 = 64,
+            Kbps_80 = 80,
+            Kbps_96 = 96,
+            Kbps_112 = 112,
+            Kbps_128 = 128,
+            Kbps_160 = 160,
+            Kbps_192 = 192,
+            Kbps_224 = 224,
+            Kbps_256 = 256,            
+            Kbps_320 = 320
         }   
 }
 

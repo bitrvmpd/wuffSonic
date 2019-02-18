@@ -27,7 +27,7 @@ namespace wuffSonic.Models
         /// <param name="timeOffset">Only applicable to video streaming. If specified, start streaming at the given offset (in seconds) into the video. Typically used to implement video skipping.</param>
         /// <param name="size">Only applicable to video streaming. Requested video size specified as WxH, for instance "640x480".</param>
         /// <param name="estimateContentLength">If set to "true", the Content-Length HTTP header will be set to an estimated value for transcoded or downsampled media.</param>
-        public Stream(string id, Bitrate maxBitRate = Bitrate.KBPS_0, string format = null, string timeOffset = null, string size = null, string estimateContentLength = "false")
+        public Stream(string id, Bitrate maxBitRate = Bitrate.Kbps_0, string format = null, string timeOffset = null, string size = null, string estimateContentLength = "false")
            : base(nameof(id), id,
                  nameof(maxBitRate), ((int)maxBitRate).ToString(),
                  nameof(format), format,
