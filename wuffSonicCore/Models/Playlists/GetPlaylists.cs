@@ -70,7 +70,7 @@ namespace wuffSonic.Models
         {
             get
             {
-                return "GetPlaylists.view";
+                return "getPlaylists";
             }
         }
     }

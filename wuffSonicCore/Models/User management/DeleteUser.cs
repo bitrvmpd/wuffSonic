@@ -37,7 +37,7 @@ namespace wuffSonic.Models
         {
             get
             {
-                return "DeleteUser.view";
+                return "deleteUser";
             }
         }
     }

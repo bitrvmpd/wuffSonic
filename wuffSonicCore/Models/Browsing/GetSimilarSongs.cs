@@ -46,7 +46,7 @@ namespace wuffSonic.Models
         {
             get
             {
-                return "GetSimilarSongs.view";
+                return "getSimilarSongs";
             }
         }
     }

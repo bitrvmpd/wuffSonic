@@ -38,7 +38,7 @@ namespace wuffSonic.Models
         {
             get
             {
-                return "DeletePodcastEpisode.view";
+                return "deletePodcastEpisode";
             }
         }
     }

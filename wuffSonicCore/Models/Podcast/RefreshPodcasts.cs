@@ -37,7 +37,7 @@ namespace wuffSonic.Models
         {
             get
             {
-                return "RefreshPodcasts.view";
+                return "refreshPodcasts";
             }
         }
     }

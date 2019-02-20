@@ -55,7 +55,7 @@ namespace wuffSonic.Models
         {
             get
             {
-                return "getMusicFolders.view";
+                return "getMusicFolders";
             }
         }
     }

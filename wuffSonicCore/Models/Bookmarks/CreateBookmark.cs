@@ -41,7 +41,7 @@ namespace wuffSonic.Models
         {
             get
             {
-                return "CreateBookmark.view";
+                return "createBookmark";
             }
         }
     }

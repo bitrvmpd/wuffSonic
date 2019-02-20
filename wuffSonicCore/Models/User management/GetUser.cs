@@ -73,7 +73,7 @@ namespace wuffSonic.Models
         {
             get
             {
-                return "GetUser.view";
+                return "getUser";
             }
         }
     }

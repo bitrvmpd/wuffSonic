@@ -45,7 +45,7 @@ namespace wuffSonic.Models
         {
             get
             {
-                return "SavePlayQueue.view";
+                return "savePlayQueue";
             }
         }
     }

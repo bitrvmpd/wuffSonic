@@ -45,7 +45,7 @@ namespace wuffSonic.Models
         {
             get
             {
-                return "HLS.m3u8";
+                return "hls.m3u8";
             }
         }
     }

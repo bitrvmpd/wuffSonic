@@ -71,7 +71,7 @@ namespace wuffSonic.Models
         {
             get
             {
-                return "JukeboxControl.view";
+                return "jukeboxControl";
             }
         }
 

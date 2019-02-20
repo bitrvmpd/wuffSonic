@@ -53,7 +53,7 @@ namespace wuffSonic.Models
         {
             get
             {
-                return "GetChatMessages.view";
+                return "getChatMessages";
             }
         }
     }

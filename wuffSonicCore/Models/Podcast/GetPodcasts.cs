@@ -122,7 +122,7 @@ namespace wuffSonic.Models
         {
             get
             {
-                return "GetPodcasts.view";
+                return "getPodcasts";
             }
         }
     }

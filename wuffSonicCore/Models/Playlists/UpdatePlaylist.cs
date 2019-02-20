@@ -47,7 +47,7 @@ namespace wuffSonic.Models
         {
             get
             {
-                return "UpdatePlaylist.view";
+                return "updatePlaylist";
             }
         }
     }

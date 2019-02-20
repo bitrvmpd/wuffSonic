@@ -70,7 +70,7 @@ namespace wuffSonic.Models
         {
             get
             {
-                return "GetLyrics.view";
+                return "getLyrics";
             }
         }
     }

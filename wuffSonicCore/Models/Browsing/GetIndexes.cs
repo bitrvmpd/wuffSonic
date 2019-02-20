@@ -205,7 +205,7 @@ namespace wuffSonic.Models
         {
             get
             {
-                return "getIndexes.view";
+                return "getIndexes";
             }
         }
     }

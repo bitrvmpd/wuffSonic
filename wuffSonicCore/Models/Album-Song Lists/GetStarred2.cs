@@ -39,7 +39,7 @@ namespace wuffSonic.Models
         {
             get
             {
-                return "GetStarred2.view";
+                return "getStarred2";
             }
         }
     }

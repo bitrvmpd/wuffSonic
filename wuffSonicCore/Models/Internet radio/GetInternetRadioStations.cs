@@ -54,7 +54,7 @@ namespace wuffSonic.Models
         {
             get
             {
-                return "GetInternetRadioStations.view";
+                return "getInternetRadioStations";
             }
         }
     }

@@ -62,7 +62,7 @@ namespace wuffSonic.Models
         {
             get
             {
-                return "Search2.view";
+                return "search2";
             }
         }
     }

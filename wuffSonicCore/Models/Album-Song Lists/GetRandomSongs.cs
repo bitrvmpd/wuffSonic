@@ -53,7 +53,7 @@ namespace wuffSonic.Models
         {
             get
             {
-                return "GetRandomSongs.view";
+                return "getRandomSongs";
             }
         }
     }

@@ -49,7 +49,7 @@ namespace wuffSonic.Models
         {
             get
             {
-                return "getGenres.view";
+                return "getGenres";
             }
         }
     }

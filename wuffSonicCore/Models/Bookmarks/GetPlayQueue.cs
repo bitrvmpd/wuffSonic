@@ -58,7 +58,7 @@ namespace wuffSonic.Models
         {
             get
             {
-                return "GetPlayQueue.view";
+                return "getPlayQueue";
             }
         }
     }

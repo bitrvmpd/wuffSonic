@@ -50,7 +50,7 @@ namespace wuffSonic.Models
         {
             get
             {
-                return "CreatePlaylist.view";
+                return "createPlaylist";
             }
         }
     }

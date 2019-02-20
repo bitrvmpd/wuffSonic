@@ -50,7 +50,7 @@ namespace wuffSonic.Models
         {
             get
             {
-                return "GetSongsByGenre.view";
+                return "getSongsByGenre";
             }
         }
     }

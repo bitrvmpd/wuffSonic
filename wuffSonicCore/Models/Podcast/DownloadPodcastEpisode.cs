@@ -38,7 +38,7 @@ namespace wuffSonic.Models
         {
             get
             {
-                return "DownloadPodcastEpisode.view";
+                return "downloadPodcastEpisode";
             }
         }
     }

@@ -80,7 +80,7 @@ namespace wuffSonic.Models
         {
             get
             {
-                return "GetVideos.view";
+                return "getVideos";
             }
         }
     }

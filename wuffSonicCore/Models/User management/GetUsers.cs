@@ -44,7 +44,7 @@ namespace wuffSonic.Models
         {
             get
             {
-                return "GetUsers.view";
+                return "getUsers";
             }
         }
     }

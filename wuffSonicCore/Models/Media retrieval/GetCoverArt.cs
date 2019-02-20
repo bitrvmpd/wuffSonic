@@ -39,7 +39,7 @@ namespace wuffSonic.Models
         {
             get
             {
-                return "GetCoverArt.view";
+                return "getCoverArt";
             }
         }
     }

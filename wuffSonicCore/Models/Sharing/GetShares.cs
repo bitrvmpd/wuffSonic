@@ -66,7 +66,7 @@ namespace wuffSonic.Models
         {
             get
             {
-                return "GetShares.view";
+                return "getShares";
             }
         }
     }

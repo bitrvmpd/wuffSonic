@@ -105,7 +105,7 @@ namespace wuffSonic.Models
         {
             get
             {
-                return "GetAlbumList.view";
+                return "getAlbumList";
             }
         }
     }

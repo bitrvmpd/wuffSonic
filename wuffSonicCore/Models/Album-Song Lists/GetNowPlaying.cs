@@ -100,7 +100,7 @@ namespace wuffSonic.Models
         {
             get
             {
-                return "GetNowPlaying.view";
+                return "getNowPlaying";
             }
         }
     }

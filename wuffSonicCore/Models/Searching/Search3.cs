@@ -53,7 +53,7 @@ namespace wuffSonic.Models
         {
             get
             {
-                return "Search3.view";
+                return "search3";
             }
         }
     }

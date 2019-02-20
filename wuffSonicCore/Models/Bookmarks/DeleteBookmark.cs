@@ -37,7 +37,7 @@ namespace wuffSonic.Models
         {
             get
             {
-                return "DeleteBookmark.view";
+                return "deleteBookmark";
             }
         }
     }

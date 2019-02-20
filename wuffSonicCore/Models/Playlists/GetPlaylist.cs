@@ -39,7 +39,7 @@ namespace wuffSonic.Models
         {
             get
             {
-                return "GetPlaylist.view";
+                return "getPlaylist";
             }
         }
     }

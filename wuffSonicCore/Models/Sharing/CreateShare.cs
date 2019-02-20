@@ -45,7 +45,7 @@ namespace wuffSonic.Models
         {
             get
             {
-                return "CreateShare.view";
+                return "createShare";
             }
         }
     }

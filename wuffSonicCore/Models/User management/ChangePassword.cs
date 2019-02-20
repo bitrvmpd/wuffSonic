@@ -40,7 +40,7 @@ namespace wuffSonic.Models
         {
             get
             {
-                return "ChangePassword.view";
+                return "changePassword";
             }
         }
     }

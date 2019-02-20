@@ -43,7 +43,7 @@ namespace wuffSonic.Models
         {
             get
             {
-                return "GetArtistInfo2.view";
+                return "getArtistInfo2";
             }
         }
     }

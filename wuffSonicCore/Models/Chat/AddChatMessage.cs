@@ -37,7 +37,7 @@ namespace wuffSonic.Models
         {
             get
             {
-                return "AddChatMessage.view";
+                return "addChatMessage";
             }
         }
     }

@@ -39,7 +39,7 @@ namespace wuffSonic.Models
         {
             get
             {
-                return "GetAlbum.view";
+                return "getAlbum";
             }
         }
     }

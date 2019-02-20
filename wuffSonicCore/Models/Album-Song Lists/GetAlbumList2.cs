@@ -80,7 +80,7 @@ namespace wuffSonic.Models
         {
             get
             {
-                return "GetAlbumList2.view";
+                return "getAlbumList2";
             }
         }
     }

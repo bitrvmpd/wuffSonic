@@ -67,7 +67,7 @@ namespace wuffSonic.Models
         {
             get
             {
-                return "CreateUser.view";
+                return "createUser";
             }
         }
     }

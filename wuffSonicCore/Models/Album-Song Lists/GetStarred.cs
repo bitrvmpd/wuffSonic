@@ -48,7 +48,7 @@ namespace wuffSonic.Models
         {
             get
             {
-                return "GetStarred.view";
+                return "getStarred";
             }
         }
     }
