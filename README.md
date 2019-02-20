@@ -1,5 +1,5 @@
 # wuffSonic
-Another Subsonic API written in C#. It's a WIP.
+Another Subsonic API client written in C#. It's a WIP.
 
 That's all for the moment.
 
