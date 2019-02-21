@@ -16,7 +16,7 @@ steps:
 - script: dotnet build --configuration $(buildConfiguration)
   displayName: 'Building wuffSonic in $(buildConfiguration) mode'
 
-- task: 'Running Tests'
+- task: Tests@2
   inputs:
     command: test
     projects: '**/*Tests.xUnit/*.csproj'
