@@ -70,11 +70,11 @@ namespace wuffSonic.Models
         {
 
         }
-        public GetVideosResponse Response
+        public GetVideoInfoResponse Response
         {
             get
             {
-                return (GetVideosResponse)_response;
+                return (GetVideoInfoResponse)_response;
             }
         }
         public override string method
