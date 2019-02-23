@@ -483,5 +483,26 @@ namespace wuffSonic.Tests.xUnit
 
             Assert.Equal<string>(expected, response.status);
         }
+        [Fact]
+        public void GetVideoInfo()
+        {
+            //Arrange
+            GetVideos v = new GetVideos()
+            {
+                Credentials = c
+            };
+
+            var response1 = v.DoRequest().GetAwaiter().GetResult();
+            GetVideoInfo vi = new GetVideoInfo(id: response1.videos.video[0].id.ToString())
+            {
+                Credentials = c
+            };
+            
+            //Act
+            var response = vi.DoRequest().GetAwaiter().GetResult();
+
+            //Assert
+            Assert.Equal<string>(expected, response.status);
+        }
     }
 }
