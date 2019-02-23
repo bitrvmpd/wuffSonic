@@ -80,7 +80,8 @@ namespace wuffSonic
         {
             dynamic resultingMessage = (T)Activator.CreateInstance(typeof(T));
             HttpClient rqst = new HttpClient();
-            string response = await rqst.GetStringAsync(getRequest());
+            string requestUrl = getRequest(); //Only for debugging purposes
+            string response = await rqst.GetStringAsync(requestUrl);
             response = response.Replace("\n", "");
 
 

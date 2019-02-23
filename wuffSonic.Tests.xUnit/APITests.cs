@@ -7,15 +7,20 @@ namespace wuffSonic.Tests.xUnit
 {
     public class APITests
     {
-        static string version = "1.13.0";
-        static string expected = "ok";
-        static Credentials c = new Credentials(
-                appName: "wuffSonic",
-                user: "guest2",
-                password: "guest",
-                version: version,
-                uri: "http://demo.subsonic.org"
-                );
+        private readonly string version = "1.13.0";
+        private readonly string expected = "ok";
+        private readonly Credentials c;
+
+        public APITests()
+        {
+            c = new Credentials(
+                    appName: "wuffSonic",
+                    user: "guest2",
+                    password: "guest",
+                    version: version,
+                    uri: "http://demo.subsonic.org"
+            );
+        }
 
         [Fact]
         public void Ping_WithValidCredentials()
@@ -497,9 +502,51 @@ namespace wuffSonic.Tests.xUnit
             {
                 Credentials = c
             };
-            
+
             //Act
             var response = vi.DoRequest().GetAwaiter().GetResult();
+
+            //Assert
+            Assert.Equal<string>(expected, response.status);
+        }
+        [Fact]
+        public void GetAlbumInfo()
+        {
+            //Arrange
+            GetAlbumList al = new GetAlbumList(ListType.random)
+            {
+                Credentials = c
+            };
+
+            var response1 = al.DoRequest().GetAwaiter().GetResult();
+            GetAlbumInfo ai = new GetAlbumInfo(id: response1.albumList.album[0].id)
+            {
+                Credentials = c
+            };
+
+            //Act
+            var response = ai.DoRequest().GetAwaiter().GetResult();
+
+            //Assert
+            Assert.Equal<string>(expected, response.status);
+        }
+        [Fact]
+        public void GetAlbumInfo2()
+        {
+            //Arrange
+            GetAlbumList al = new GetAlbumList(ListType.random)
+            {
+                Credentials = c
+            };
+
+            var response1 = al.DoRequest().GetAwaiter().GetResult();
+            GetAlbumInfo2 ai2 = new GetAlbumInfo2(id: "4") //Hard coded for now.
+            {
+                Credentials = c
+            };
+
+            //Act
+            var response = ai2.DoRequest().GetAwaiter().GetResult();
 
             //Assert
             Assert.Equal<string>(expected, response.status);
