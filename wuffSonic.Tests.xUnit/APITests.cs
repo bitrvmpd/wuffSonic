@@ -7,7 +7,7 @@ namespace wuffSonic.Tests.xUnit
 {
     public class APITests
     {
-        private readonly string version = "1.13.0";
+        private readonly string version = "1.14.0";
         private readonly string expected = "ok";
         private readonly Credentials c;
 
