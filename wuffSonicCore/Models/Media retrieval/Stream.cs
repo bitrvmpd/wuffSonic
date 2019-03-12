@@ -27,13 +27,16 @@ namespace wuffSonic.Models
         /// <param name="timeOffset">Only applicable to video streaming. If specified, start streaming at the given offset (in seconds) into the video. Typically used to implement video skipping.</param>
         /// <param name="size">Only applicable to video streaming. Requested video size specified as WxH, for instance "640x480".</param>
         /// <param name="estimateContentLength">If set to "true", the Content-Length HTTP header will be set to an estimated value for transcoded or downsampled media.</param>
-        public Stream(string id, Bitrate maxBitRate = Bitrate.Kbps_0, string format = null, string timeOffset = null, string size = null, string estimateContentLength = "false")
+        /// <param name="converted">Only applicable to video streaming. Subsonic can optimize videos for streaming by converting them to MP4. If a conversion exists for the video in question, then setting this parameter to "true" will cause the converted video to be returned instead of the original.</param>
+        public Stream(string id, Bitrate maxBitRate = Bitrate.Kbps_0, string format = null, string timeOffset = null, string size = null, string estimateContentLength = "false", string converted = "false")
            : base(nameof(id), id,
                  nameof(maxBitRate), ((int)maxBitRate).ToString(),
                  nameof(format), format,
                  nameof(timeOffset), timeOffset,
                  nameof(size), size,
-                 nameof(estimateContentLength), estimateContentLength)
+                 nameof(estimateContentLength), estimateContentLength,
+                 nameof(converted), converted)
+
         {
 
         }
