@@ -7,43 +7,44 @@ using System.Xml.Serialization;
 
 namespace wuffSonic.Models
 {
-    [XmlRoot(ElementName = "subsonic-response", Namespace = "http://subsonic.org/restapi")]
-    public class CreatePlaylistResponse
+    public class CreatePlaylist : Request<GetPlaylistResponse>
     {
-        [XmlAttribute(AttributeName = "version")]
-        public string version { get; set; }
-        [XmlAttribute(AttributeName = "status")]
-        public string status { get; set; }
-    }
-    public class CreatePlaylist : Request<CreatePlaylistResponse>
-    {
+        // To avoid constructor with same signatures.
+        private CreatePlaylist(string playlistId = null, string name = null, string songId = null)
+            : base(nameof(playlistId), playlistId,
+                  nameof(name), name,
+                  nameof(songId), songId)
+        {
+
+        }
+
+        private CreatePlaylist() { }
+
         /// <summary>
         /// Creates a playlist.
         /// </summary>
-        /// <param name="songId">ID of a song in the playlist. Use one songId parameter for each song in the playlist.</param>
         /// <param name="name">The human-readable name of the playlist.</param>
-        public CreatePlaylist(string songId,string name)
-           : base(nameof(songId), songId,
-                 nameof(name), name)
+        /// <param name="songId">ID of a song in the playlist. Use one songId parameter for each song in the playlist.</param>
+        public static CreatePlaylist CreateNewPlaylist(string name, string songId = null)
         {
-
+            return new CreatePlaylist(name: name, songId: songId);
         }
         /// <summary>
         /// Updates a playlist.
         /// </summary>
-        /// <param name="songId">ID of a song in the playlist. Use one songId parameter for each song in the playlist.</param>
         /// <param name="playlistId">The playlist ID.</param>
-        public CreatePlaylist(string songId,string playlistId,object zero = null)
-           : base(nameof(songId), songId,
-                 nameof(playlistId),playlistId)
+        /// <param name="songId">ID of a song in the playlist. Use one songId parameter for each song in the playlist.</param>
+        public static CreatePlaylist UpdatePlaylist(string playlistId, string songId = null)
         {
-
+            return new CreatePlaylist(playlistId: playlistId, songId: songId);
         }
-        public CreatePlaylistResponse Response
+
+        // Updated for 1.14.0
+        public GetPlaylistResponse Response
         {
             get
             {
-                return (CreatePlaylistResponse)_response;
+                return (GetPlaylistResponse)_response;
             }
         }
         public override string method
