@@ -21,3 +21,4 @@ steps:
     command: test
     projects: '**/*Tests.xUnit/*.csproj'
     arguments: '--configuration $(buildConfiguration)'
+  timeoutInMinutes: 360
