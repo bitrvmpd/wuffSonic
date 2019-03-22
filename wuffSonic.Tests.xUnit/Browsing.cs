@@ -37,7 +37,7 @@ namespace wuffSonic.Tests.xUnit
             var response3 = al.DoRequest().GetAwaiter().GetResult();
 
             //Assert
-            Assert.Equal<string>(expected, response3.status);
+            Assert.Equal(expected, response3.status);
         }
         [Fact]
         public void GetAlbumInfo()
@@ -58,7 +58,7 @@ namespace wuffSonic.Tests.xUnit
             var response = ai.DoRequest().GetAwaiter().GetResult();
 
             //Assert
-            Assert.Equal<string>(expected, response.status);
+            Assert.Equal(expected, response.status);
         }
         [Fact]
         public void GetAlbumInfo2()
@@ -79,7 +79,7 @@ namespace wuffSonic.Tests.xUnit
             var response = ai2.DoRequest().GetAwaiter().GetResult();
 
             //Assert
-            Assert.Equal<string>(expected, response.status);
+            Assert.Equal(expected, response.status);
         }
 
         [Fact]
@@ -102,7 +102,7 @@ namespace wuffSonic.Tests.xUnit
             var response2 = a.DoRequest().GetAwaiter().GetResult();
 
             //Assert
-            Assert.Equal<string>(expected, response2.status);
+            Assert.Equal(expected, response2.status);
         }
 
         [Fact]
@@ -122,7 +122,7 @@ namespace wuffSonic.Tests.xUnit
             //Act
             var response2 = ai.DoRequest().GetAwaiter().GetResult();
             //Assert
-            Assert.Equal<string>(expected, response2.status);
+            Assert.Equal(expected, response2.status);
         }
         [Fact]
         public void GetArtistInfo2()
@@ -141,7 +141,7 @@ namespace wuffSonic.Tests.xUnit
             //Act
             var response2 = ai.DoRequest().GetAwaiter().GetResult();
             //Assert
-            Assert.Equal<string>(expected, response2.status);
+            Assert.Equal(expected, response2.status);
         }
 
         [Fact]
@@ -157,7 +157,7 @@ namespace wuffSonic.Tests.xUnit
             var response = a.DoRequest().GetAwaiter().GetResult();
 
             //Assert
-            Assert.Equal<string>(expected, response.status);
+            Assert.Equal(expected, response.status);
         }
 
         [Fact]
@@ -173,7 +173,7 @@ namespace wuffSonic.Tests.xUnit
             var response = g.DoRequest().GetAwaiter().GetResult();
 
             //Assert
-            Assert.Equal<string>(expected, response.status);
+            Assert.Equal(expected, response.status);
         }
         [Fact]
         public void GetIndexes()
@@ -188,7 +188,7 @@ namespace wuffSonic.Tests.xUnit
             var response = i.DoRequest().GetAwaiter().GetResult();
 
             //Assert
-            Assert.Equal<string>(expected, response.status);
+            Assert.Equal(expected, response.status);
         }
         [Fact]
         public void GetMusicDirectory()
@@ -210,7 +210,7 @@ namespace wuffSonic.Tests.xUnit
             var response2 = md.DoRequest().GetAwaiter().GetResult();
 
             //Assert
-            Assert.Equal<string>(expected, response2.status);
+            Assert.Equal(expected, response2.status);
         }
         [Fact]
         public void GetMusicFolders()
@@ -225,7 +225,7 @@ namespace wuffSonic.Tests.xUnit
             var response = mf.DoRequest().GetAwaiter().GetResult();
 
             //Assert
-            Assert.Equal<string>(expected, response.status);
+            Assert.Equal(expected, response.status);
         }
         [Fact]
         //[ExpectedException(typeof(SubsonicException))]
@@ -248,7 +248,7 @@ namespace wuffSonic.Tests.xUnit
             var response2 = ss.DoRequest().GetAwaiter().GetResult();
 
             //Assert
-            Assert.Equal<string>(expected, response2.status);
+            Assert.Equal(expected, response2.status);
         }
         [Fact]
         //[ExpectedException(typeof(SubsonicException))]
@@ -271,7 +271,7 @@ namespace wuffSonic.Tests.xUnit
             var response2 = ss.DoRequest().GetAwaiter().GetResult();
 
             //Assert
-            Assert.Equal<string>(expected, response2.status);
+            Assert.Equal(expected, response2.status);
         }
         [Fact]
         public void GetSong()
@@ -307,7 +307,7 @@ namespace wuffSonic.Tests.xUnit
             //Act
             var response4 = s.DoRequest().GetAwaiter().GetResult();
             //Assert
-            Assert.Equal<string>(expected, response3.status);
+            Assert.Equal(expected, response3.status);
         }
         [Fact]
         //[ExpectedException(typeof(SubsonicException))]
@@ -327,7 +327,7 @@ namespace wuffSonic.Tests.xUnit
             //Act
             var response2 = ss.DoRequest().GetAwaiter().GetResult();
             //Assert
-            Assert.Equal<string>(expected, response2.status);
+            Assert.Equal(expected, response2.status);
         }
         [Fact]
         public void GetVideoInfo()
@@ -348,7 +348,7 @@ namespace wuffSonic.Tests.xUnit
             var response = vi.DoRequest().GetAwaiter().GetResult();
 
             //Assert
-            Assert.Equal<string>(expected, response.status);
+            Assert.Equal(expected, response.status);
         }
 
         [Fact]
@@ -364,7 +364,7 @@ namespace wuffSonic.Tests.xUnit
             var response = v.DoRequest().GetAwaiter().GetResult();
 
             //Assert
-            Assert.Equal<string>(expected, response.status);
+            Assert.Equal(expected, response.status);
         }
     }
 }

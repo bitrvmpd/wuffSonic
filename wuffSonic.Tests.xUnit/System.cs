@@ -25,7 +25,7 @@ namespace wuffSonic.Tests.xUnit
             //Act
             var response = p.DoRequest().Result;
             //Assert
-            Assert.Equal<string>(expectedStatus, response.status);
+            Assert.Equal(expectedStatus, response.status);
         }
 
         [Fact]
@@ -79,7 +79,7 @@ namespace wuffSonic.Tests.xUnit
             var response = l.DoRequest().GetAwaiter().GetResult();
 
             //Assert
-            Assert.Equal<string>(expected, response.status);
+            Assert.Equal(expected, response.status);
         }
     }
 }

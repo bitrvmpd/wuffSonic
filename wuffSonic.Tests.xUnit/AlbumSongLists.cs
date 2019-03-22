@@ -19,7 +19,7 @@ namespace wuffSonic.Tests.xUnit
             };
             var response = al.DoRequest().GetAwaiter().GetResult();
 
-            Assert.Equal<string>(expected, response.status);
+            Assert.Equal(expected, response.status);
         }
         [Fact]
         public void GetAlbumList_alphabeticalByName()
@@ -30,7 +30,7 @@ namespace wuffSonic.Tests.xUnit
             };
             var response = al.DoRequest().GetAwaiter().GetResult();
 
-            Assert.Equal<string>(expected, response.status);
+            Assert.Equal(expected, response.status);
         }
         [Fact]
         public void GetAlbumList_frequent()
@@ -41,7 +41,7 @@ namespace wuffSonic.Tests.xUnit
             };
             var response = al.DoRequest().GetAwaiter().GetResult();
 
-            Assert.Equal<string>(expected, response.status);
+            Assert.Equal(expected, response.status);
         }
         [Fact]
         public void GetAlbumList_highest()
@@ -52,7 +52,7 @@ namespace wuffSonic.Tests.xUnit
             };
             var response = al.DoRequest().GetAwaiter().GetResult();
 
-            Assert.Equal<string>(expected, response.status);
+            Assert.Equal(expected, response.status);
         }
         [Fact]
         public void GetAlbumList_newest()
@@ -63,7 +63,7 @@ namespace wuffSonic.Tests.xUnit
             };
             var response = al.DoRequest().GetAwaiter().GetResult();
 
-            Assert.Equal<string>(expected, response.status);
+            Assert.Equal(expected, response.status);
         }
         [Fact]
         public void GetAlbumList_random()
@@ -74,7 +74,7 @@ namespace wuffSonic.Tests.xUnit
             };
             var response = al.DoRequest().GetAwaiter().GetResult();
 
-            Assert.Equal<string>(expected, response.status);
+            Assert.Equal(expected, response.status);
         }
         [Fact]
         public void GetAlbumList_recent()
@@ -85,7 +85,7 @@ namespace wuffSonic.Tests.xUnit
             };
             var response = al.DoRequest().GetAwaiter().GetResult();
 
-            Assert.Equal<string>(expected, response.status);
+            Assert.Equal(expected, response.status);
         }
         [Fact]
         public void GetAlbumList_starred()
@@ -96,7 +96,7 @@ namespace wuffSonic.Tests.xUnit
             };
             var response = al.DoRequest().GetAwaiter().GetResult();
 
-            Assert.Equal<string>(expected, response.status);
+            Assert.Equal(expected, response.status);
         }
         [Fact]
         public void GetAlbumList_genre()
@@ -107,7 +107,7 @@ namespace wuffSonic.Tests.xUnit
             };
             var response = al.DoRequest().GetAwaiter().GetResult();
 
-            Assert.Equal<string>(expected, response.status);
+            Assert.Equal(expected, response.status);
         }
         [Fact]
         public void GetAlbumList_year()
@@ -118,7 +118,7 @@ namespace wuffSonic.Tests.xUnit
             };
             var response = al.DoRequest().GetAwaiter().GetResult();
 
-            Assert.Equal<string>(expected, response.status);
+            Assert.Equal(expected, response.status);
         }
         #endregion
         #region GetAlbumList2
@@ -131,7 +131,7 @@ namespace wuffSonic.Tests.xUnit
             };
             var response = al.DoRequest().GetAwaiter().GetResult();
 
-            Assert.Equal<string>(expected, response.status);
+            Assert.Equal(expected, response.status);
         }
         [Fact]
         public void GetAlbumList2_alphabeticalByName()
@@ -142,7 +142,7 @@ namespace wuffSonic.Tests.xUnit
             };
             var response = al.DoRequest().GetAwaiter().GetResult();
 
-            Assert.Equal<string>(expected, response.status);
+            Assert.Equal(expected, response.status);
         }
         [Fact]
         public void GetAlbumList2_frequent()
@@ -153,7 +153,7 @@ namespace wuffSonic.Tests.xUnit
             };
             var response = al.DoRequest().GetAwaiter().GetResult();
 
-            Assert.Equal<string>(expected, response.status);
+            Assert.Equal(expected, response.status);
         }
 
         [Fact]
@@ -165,7 +165,7 @@ namespace wuffSonic.Tests.xUnit
             };
             var response = al.DoRequest().GetAwaiter().GetResult();
 
-            Assert.Equal<string>(expected, response.status);
+            Assert.Equal(expected, response.status);
         }
         [Fact]
         public void GetAlbumList2_random()
@@ -176,7 +176,7 @@ namespace wuffSonic.Tests.xUnit
             };
             var response = al.DoRequest().GetAwaiter().GetResult();
 
-            Assert.Equal<string>(expected, response.status);
+            Assert.Equal(expected, response.status);
         }
         [Fact]
         public void GetAlbumList2_recent()
@@ -187,7 +187,7 @@ namespace wuffSonic.Tests.xUnit
             };
             var response = al.DoRequest().GetAwaiter().GetResult();
 
-            Assert.Equal<string>(expected, response.status);
+            Assert.Equal(expected, response.status);
         }
         [Fact]
         public void GetAlbumList2_starred()
@@ -198,7 +198,7 @@ namespace wuffSonic.Tests.xUnit
             };
             var response = al.DoRequest().GetAwaiter().GetResult();
 
-            Assert.Equal<string>(expected, response.status);
+            Assert.Equal(expected, response.status);
         }
         [Fact]
         public void GetAlbumList2_genre()
@@ -209,7 +209,7 @@ namespace wuffSonic.Tests.xUnit
             };
             var response = al.DoRequest().GetAwaiter().GetResult();
 
-            Assert.Equal<string>(expected, response.status);
+            Assert.Equal(expected, response.status);
         }
         [Fact]
         public void GetAlbumList2_year()
@@ -220,7 +220,7 @@ namespace wuffSonic.Tests.xUnit
             };
             var response = al.DoRequest().GetAwaiter().GetResult();
 
-            Assert.Equal<string>(expected, response.status);
+            Assert.Equal(expected, response.status);
         }
         #endregion
         #region GetNowPlaying
@@ -233,7 +233,7 @@ namespace wuffSonic.Tests.xUnit
             };
             var response = np.DoRequest().GetAwaiter().GetResult();
 
-            Assert.Equal<string>(expected, response.status);
+            Assert.Equal(expected, response.status);
         }
         #endregion
         #region GetRandomSongs
@@ -246,7 +246,7 @@ namespace wuffSonic.Tests.xUnit
             };
             var response = rs.DoRequest().GetAwaiter().GetResult();
 
-            Assert.Equal<string>(expected, response.status);
+            Assert.Equal(expected, response.status);
         }
         [Fact]
         public void GetRandomSongs_MaxSize()
@@ -258,7 +258,7 @@ namespace wuffSonic.Tests.xUnit
 
             var response = rs.DoRequest().GetAwaiter().GetResult();
 
-            Assert.Equal<string>(expected, response.status);
+            Assert.Equal(expected, response.status);
         }
         [Fact]
         public void GetRandomSongs_genre()
@@ -269,7 +269,7 @@ namespace wuffSonic.Tests.xUnit
             };
             var response = rs.DoRequest().GetAwaiter().GetResult();
 
-            Assert.Equal<string>(expected, response.status);
+            Assert.Equal(expected, response.status);
         }
         [Fact]
         public void GetRandomSongs_year()
@@ -280,7 +280,7 @@ namespace wuffSonic.Tests.xUnit
             };
             var response = rs.DoRequest().GetAwaiter().GetResult();
 
-            Assert.Equal<string>(expected, response.status);
+            Assert.Equal(expected, response.status);
         }
         [Fact]
         public void GetRandomSongs_musicFolderId()
@@ -294,7 +294,7 @@ namespace wuffSonic.Tests.xUnit
             };
             var response = rs.DoRequest().GetAwaiter().GetResult();
 
-            Assert.Equal<string>(expected, response.status);
+            Assert.Equal(expected, response.status);
         }
         #endregion
         #region GetSongsByGenre
@@ -308,7 +308,7 @@ namespace wuffSonic.Tests.xUnit
             };
             var response = rs.DoRequest().GetAwaiter().GetResult();
 
-            Assert.Equal<string>(expected, response.status);
+            Assert.Equal(expected, response.status);
         }
         [Fact]
         public void GetSongsByGenre_count()
@@ -320,7 +320,7 @@ namespace wuffSonic.Tests.xUnit
             };
             var response = rs.DoRequest().GetAwaiter().GetResult();
 
-            Assert.Equal<string>(expected, response.status);
+            Assert.Equal(expected, response.status);
         }
         [Fact]
         public void GetSongsByGenre_offset()
@@ -332,7 +332,7 @@ namespace wuffSonic.Tests.xUnit
             };
             var response = rs.DoRequest().GetAwaiter().GetResult();
 
-            Assert.Equal<string>(expected, response.status);
+            Assert.Equal(expected, response.status);
         }
         [Fact]
         public void GetSongsByGenre_musicFolderId()
@@ -346,7 +346,7 @@ namespace wuffSonic.Tests.xUnit
             };
             var response = rs.DoRequest().GetAwaiter().GetResult();
 
-            Assert.Equal<string>(expected, response.status);
+            Assert.Equal(expected, response.status);
         }
         #endregion
         #region GetStarred
@@ -359,7 +359,7 @@ namespace wuffSonic.Tests.xUnit
             };
             var response = gs.DoRequest().GetAwaiter().GetResult();
 
-            Assert.Equal<string>(expected, response.status);
+            Assert.Equal(expected, response.status);
         }
         [Fact]
         public void GetStarred_musicFolderId()
@@ -373,7 +373,7 @@ namespace wuffSonic.Tests.xUnit
             };
             var response = gs.DoRequest().GetAwaiter().GetResult();
 
-            Assert.Equal<string>(expected, response.status);
+            Assert.Equal(expected, response.status);
         }
         #endregion
         #region GetStarred2
@@ -386,7 +386,7 @@ namespace wuffSonic.Tests.xUnit
             };
             var response = gs.DoRequest().GetAwaiter().GetResult();
 
-            Assert.Equal<string>(expected, response.status);
+            Assert.Equal(expected, response.status);
         }
         [Fact]
         public void GetStarred2_musicFolderId()
@@ -400,7 +400,7 @@ namespace wuffSonic.Tests.xUnit
             };
             var response = gs.DoRequest().GetAwaiter().GetResult();
 
-            Assert.Equal<string>(expected, response.status);
+            Assert.Equal(expected, response.status);
         }
         #endregion
     }
