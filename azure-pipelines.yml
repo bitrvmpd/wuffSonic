@@ -2,23 +2,27 @@
 # Build and test ASP.NET Core projects targeting .NET Core.
 # Add steps that run tests, create a NuGet package, deploy, and more:
 # https://docs.microsoft.com/azure/devops/pipelines/languages/dotnet-core
-
 trigger:
-- develop
+ - develop
 
-pool:
-  vmImage: 'Ubuntu-16.04'
-
-variables:
-  buildConfiguration: 'Release'
-
-steps:
-- script: dotnet build --configuration $(buildConfiguration)
-  displayName: 'Building wuffSonic in $(buildConfiguration) mode'
-
-- task: DotNetCoreCLI@2
-  inputs:
-    command: test
-    projects: '**/*Tests.xUnit/*.csproj'
-    arguments: '--configuration $(buildConfiguration)'
+name: 'WuffSonic build and test'
+jobs:
+- job: build_and_test
   timeoutInMinutes: 360
+
+  pool:
+    vmImage: 'Ubuntu-16.04'
+
+  variables:
+    buildConfiguration: 'Release'
+
+  steps:
+  - script: dotnet build --configuration $(buildConfiguration)
+    displayName: 'Building wuffSonic in $(buildConfiguration) mode'
+
+
+  - task: DotNetCoreCLI@2
+    inputs:
+      command: test
+      projects: '**/*Tests.xUnit/*.csproj'
+      arguments: '--configuration $(buildConfiguration)'
