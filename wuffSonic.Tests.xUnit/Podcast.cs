@@ -6,9 +6,9 @@ using Xunit;
 
 namespace wuffSonic.Tests.xUnit
 {
-    public class Podcast : APITests
+    public partial class APITests
     {
-        public Podcast() : base() { }
+
 
     }
 }

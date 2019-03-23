@@ -6,11 +6,8 @@ using Xunit;
 
 namespace wuffSonic.Tests.xUnit
 {
-    public class Bookmarks : APITests
+    public partial class APITests
     {
-        public Bookmarks() : base()
-        {
 
-        }
     }
 }

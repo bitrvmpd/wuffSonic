@@ -6,9 +6,8 @@ using Xunit;
 
 namespace wuffSonic.Tests.xUnit
 {
-    public class Browsing : APITests
+    public partial class APITests
     {
-        public Browsing() : base() { }
 
         [Fact]
         public void GetAlbum()

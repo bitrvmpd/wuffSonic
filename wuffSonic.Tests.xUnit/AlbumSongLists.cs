@@ -6,9 +6,8 @@ using Xunit;
 
 namespace wuffSonic.Tests.xUnit
 {
-    public class AlbumSongLists : APITests
+    public partial class APITests
     {
-        public AlbumSongLists() : base() { }
         #region GetAlbumList
         [Fact]
         public void GetAlbumList_alpabheticalByArtist()

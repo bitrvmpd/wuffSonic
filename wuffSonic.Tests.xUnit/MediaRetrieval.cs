@@ -6,11 +6,8 @@ using Xunit;
 
 namespace wuffSonic.Tests.xUnit
 {
-    public class MediaRetrieval : APITests
+    public partial class APITests
     {
-        public MediaRetrieval() : base()
-        {
 
-        }
     }
 }

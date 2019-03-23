@@ -6,11 +6,7 @@ using Xunit;
 
 namespace wuffSonic.Tests.xUnit
 {
-    public class InternetRadio : APITests
+    public partial class APITests
     {
-        public InternetRadio() : base()
-        {
-
-        }
     }
 }

@@ -6,11 +6,8 @@ using Xunit;
 
 namespace wuffSonic.Tests.xUnit
 {
-    public class MediaAnnotation : APITests
+    public partial class APITests
     {
-        public MediaAnnotation() : base()
-        {
 
-        }
     }
 }

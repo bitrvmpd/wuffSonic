@@ -6,11 +6,8 @@ using Xunit;
 
 namespace wuffSonic.Tests.xUnit
 {
-    public class Searching : APITests
+    public partial class APITests
     {
-        public Searching() : base()
-        {
 
-        }
     }
 }

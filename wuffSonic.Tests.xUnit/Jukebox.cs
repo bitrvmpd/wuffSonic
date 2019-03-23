@@ -6,11 +6,8 @@ using Xunit;
 
 namespace wuffSonic.Tests.xUnit
 {
-    public class Jukebox : APITests
+    public partial class APITests
     {
-        public Jukebox() : base()
-        {
-
-        }
+        
     }
 }

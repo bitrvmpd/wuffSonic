@@ -5,7 +5,7 @@ using Xunit;
 
 namespace wuffSonic.Tests.xUnit
 {
-    public abstract class APITests
+    public partial class APITests
     {
         protected readonly string version = "1.14.0";
         protected readonly string expected = "ok";

@@ -6,13 +6,8 @@ using Xunit;
 
 namespace wuffSonic.Tests.xUnit
 {
-    public class System : APITests
+    public partial class APITests
     {
-        public System() : base()
-        {
-
-        }
-
         [Fact]
         public void Ping_WithValidCredentials()
         {
