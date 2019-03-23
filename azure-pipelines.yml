@@ -14,5 +14,11 @@ variables:
 
 steps:
 - script: dotnet build --configuration $(buildConfiguration)
-  displayName: 'dotnet build $(buildConfiguration)'
+  displayName: 'Building wuffSonic in $(buildConfiguration) mode'
+
+- task: DotNetCoreCLI@2
+  inputs:
+    command: test
+    projects: '**/*Tests.xUnit/*.csproj'
+    arguments: '--configuration $(buildConfiguration)'
   timeoutInMinutes: 360
