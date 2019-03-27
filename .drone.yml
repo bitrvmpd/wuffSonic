@@ -9,12 +9,12 @@ trigger:
 
 steps:
 - name: build
-  image: mcr.microsoft.com/dotnet/core/runtime:2.2.3-alpine3.9
+  image: mcr.microsoft.com/dotnet/core/sdk:2.2-alpine3.9
   commands:
     - dotnet build -c Release
 
 - name: test
-  image: mcr.microsoft.com/dotnet/core/runtime:2.2.3-alpine3.9
+  image: mcr.microsoft.com/dotnet/core/sdk:2.2-alpine3.9
   when:
     status:
       - success
