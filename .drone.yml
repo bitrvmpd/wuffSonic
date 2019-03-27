@@ -1,0 +1,22 @@
+kind: pipeline
+name: 'wuffSonic'
+
+trigger:
+  branch:
+    - develop
+  event:
+    - push
+
+steps:
+- name: build
+  image: mcr.microsoft.com/dotnet/core/runtime:2.2.3-alpine3.9
+  commands:
+    - dotnet build -c Release
+
+- name: test
+  image: mcr.microsoft.com/dotnet/core/runtime:2.2.3-alpine3.9
+  when:
+    status:
+      - success
+  commands:
+    - dotnet test -c Release
