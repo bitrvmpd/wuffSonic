@@ -1,5 +1,5 @@
 # wuffSonic
-[![Build Status](https://dev.azure.com/enoyersilva/wuffSonic/_apis/build/status/bitrvmpd.wuffSonic?branchName=develop)](https://dev.azure.com/enoyersilva/wuffSonic/_build/latest?definitionId=1&branchName=develop)
+[![Build Status](https://ci.haus.fxb.mx/api/badges/bitrvmpd/wuffSonic/status.svg?ref=refs/heads/develop)](https://ci.haus.fxb.mx/bitrvmpd/wuffSonic)
 
 Another Subsonic API client written in C#. It's a WIP.
 
